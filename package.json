@@ -1,0 +1,102 @@
+{
+  "name": "gulp-project",
+  "version": "1.0.0",
+  "description": "Fast and effective environment for web development",
+  "private": true,
+  "workspaces": [
+    "./src/**",
+    "./configs/**/"
+  ],
+  "browserslist": [
+    ">=1%",
+    "not ie <= 11",
+    "not dead",
+    "node 12"
+  ],
+  "scripts": {
+    "develop": "gulp",
+    "format": "prettier --write './**/*.{html,js,json,css,scss}'",
+    "lint:js": "eslint --fix './src/**/*.js'",
+    "lint:css": "stylelint './src/**/*.{css,scss}'",
+    "build": "gulp build",
+    "upgrade-packages": "node ./configs/upgradePackages.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint:js && yarn lint:css",
+      "post-commit": "git update-index --again"
+    }
+  },
+  "eslintConfig": {
+    "extends": "./configs/linters/.eslintrc.js"
+  },
+  "stylelint": {
+    "extends": "./configs/linters/.stylelintrc.js"
+  },
+  "babel": {
+    "extends": "./configs/babelrc.js"
+  },
+  "dependencies": {
+    "jquery": "3.4.1",
+    "jquery-ui-slider": "1.12.1",
+    "echo-js": "1.7.3",
+    "lightgallery": "1.6.12",
+    "lightslider": "1.1.6",
+    "owl.carousel": "2.3.4",
+    "remodal": "1.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.7.5",
+    "@babel/preset-env": "7.7.6",
+    "autoprefixer": "9.7.3",
+    "browser-sync": "2.26.7",
+    "css-mqpacker": "7.0.0",
+    "cssnano": "4.1.10",
+    "del": "5.1.0",
+    "gulp": "4.0.2",
+    "gulp-cli": "2.2.0",
+    "gulp-babel": "8.0.0",
+    "gulp-imagemin": "6.2.0",
+    "gulp-uglify-es": "2.0.0",
+    "gulp-newer": "1.4.0",
+    "gulp-notify": "3.2.0",
+    "gulp-plumber": "1.2.1",
+    "gulp-postcss": "8.0.0",
+    "gulp-pug": "4.0.1",
+    "gulp-rename": "2.0.0",
+    "gulp-sourcemaps": "2.6.5",
+    "postcss-preset-env": "6.7.0",
+    "postcss-nested": "4.2.1",
+    "postcss-advanced-variables": "3.0.0",
+    "postcss-custom-media": "7.0.8",
+    "postcss-color-function": "4.1.0",
+    "postcss-selector-not": "4.0.0",
+    "postcss-selector-matches": "4.0.0",
+    "postcss-svg": "3.0.0",
+    "postcss-aspect-ratio": "1.0.2",
+    "postcss-line-height-px-to-unitless": "0.2.1",
+    "postcss-pxtorem": "4.0.1",
+    "postcss-scale": "1.0.1",
+    "postcss-extend-rule": "3.0.0",
+    "postcss-atroot": "0.1.3",
+    "postcss-property-lookup": "2.0.0",
+    "postcss-assets": "5.0.0",
+    "postcss-css-reset": "1.0.2",
+    "postcss-scss": "2.0.0",
+    "postcss-sprites": "4.2.1",
+    "prettier-stylelint": "0.4.2"
+  },
+  "optionalDependencies": {
+    "husky": "3.1.0",
+    "npm-check-updates": "4.0.1",
+    "prettier": "1.19.1"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MariannaV/success"
+  },
+  "bugs": {
+    "url": "https://github.com/MariannaV/success/issues"
+  }
+}
