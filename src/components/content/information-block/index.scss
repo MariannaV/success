@@ -1,0 +1,27 @@
+.information-block {
+  padding: 31px 24px;
+
+  & > h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $FontBold;
+    font-size: $size-22;
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+
+  & > h4 {
+    font-family: "Open Sans";
+    font-weight: $FontDemi;
+    font-size: $size-16;
+    line-height: 16px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background-repeat: no-repeat;
+    margin-bottom: 22px;
+  }
+
+  & > p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

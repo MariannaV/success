@@ -4,5 +4,7 @@
 @import 'helpers/base.scss';
 @import 'helpers/mixins.scss';
 
+@import '../components/content/link/index.scss';
+@import '../components/content/information-block/index.scss';
 @import '../components/forms/index.scss';
 @import '../components/login-page/login-page.scss';

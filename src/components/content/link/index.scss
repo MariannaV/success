@@ -1,0 +1,37 @@
+.link {
+  display: block;
+  position: relative;
+  $fontSize: $size-12;
+
+  &, &::after {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $FontDemi;
+    font-size: $fontSize;
+    line-height: 22px;
+  }
+
+  &::after {
+    content: attr(data-text);
+    color: transparent;
+    text-decoration: line-through;
+    position: absolute;
+    left: 0;
+    top: calc($fontSize / 2 + 2px);
+    width: 100%;
+  }
+}
+
+.with-video {
+  $paddingForImage: 45px;
+  color: $colorWhite;
+  min-height: 45px;
+  background-image: url("../img/svg/play-icon.svg");
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  padding-right: $paddingForImage;
+
+  &::after {
+    text-decoration-color: $colorWhiteOpacity3;
+    width: calc(100% - $paddingForImage);
+  }
+}

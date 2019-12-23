@@ -41,6 +41,10 @@ fieldset {
   margin: 0;
 }
 
+a, button {
+  cursor: pointer;
+}
+
 @media (--max-tablet) {
   .mobile-hide {
     display: none !important;
@@ -117,4 +121,18 @@ fieldset {
   @media(--min-tablet) {
     padding: $margin-2;
   }
+}
+
+
+.orange-button {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(25, 93%, 48%);
+  padding: 20px;
+  width: 100%;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+
 }
