@@ -1,0 +1,22 @@
+$inputPaddings: 16px;
+
+fieldset.m-input__container,
+fieldset.m-select__container {
+  & + fieldset {
+    margin-top: 16px;
+  }
+}
+
+.m-input__wrapper > input,
+.m-select__container > select {
+  font-family: "Open Sans";
+  font-weight: $FontDemi;
+  height: 56px;
+  width: 100%;
+  color: $colorBlack;
+  border: 1px solid $colorLightGray;
+  border-radius: 4px;
+  padding: 0 $inputPaddings;
+  font-size: $size-14;
+  line-height: 19px;
+}

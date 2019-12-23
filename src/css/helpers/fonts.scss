@@ -1,0 +1,37 @@
+/* @font-face {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  //font-weight: $FontRegular;
+  //src: url('fonts/pt-sans-regular.woff2') format('woff2');
+} */
+
+
+
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: $FontRegular;
+  src: url('fonts/pt-sans-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: $FontRegular;
+  src: url('fonts/pt-sans-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: $FontBold;
+  src: url('fonts/pt-sans-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: $FontBold;
+  src: url('fonts/pt-sans-700-italic.woff2') format('woff2');
+}

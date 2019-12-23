@@ -1,0 +1,42 @@
+@mixin bg($name) {
+  background: url('../img/sprite/$name') 50% no-repeat;
+  width: width('../img/sprite/$name');
+  height: height('../img/sprite/$name');
+  display: block;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin word-wrap {
+  overflow-wrap: break-word;
+  word-break: break-all;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+@mixin background-svg {
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+@mixin button($bg-color, $font-color) {
+  background: $bg-color;
+  color: $font-color;
+  border-color: $font-color;
+
+  &:focus {
+  }
+
+  &:hover {
+    background: lighten($bg-color, 20%);
+  }
+
+  &:active {
+    background: lighten($bg-color, 30%);
+  }
+}

@@ -1,0 +1,342 @@
+.login-page {
+  background-color: $colorBlueDark;
+  color: $colorWhite;
+  padding-top: 49px;
+  padding-bottom: 60px;
+
+  & > header, & > main, & > footer {
+    padding: 0 $margin-1;
+  }
+
+  h1, h2, h3, p, a {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .header-logo {
+    display: block;
+    width: 220px;
+    height: 60px;
+    background-image: url("../img/svg/logo-img.svg");
+  }
+
+  .orange-button {
+    margin-top: 32px;
+  }
+
+  @media(--min-tablet) {
+    padding-top: $margin-big-desktop-vertical;
+  }
+}
+
+.login-page > header {
+  margin-bottom: 26px;
+}
+
+.login-page > main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & + footer {
+    margin-top: 81px;
+  }
+}
+
+.login-page > footer {
+  font-family: "Open Sans";
+  font-weight: $FontRegular;
+  font-size: $size-14;
+  line-height: 16px;
+  color: $colorWhiteOpacity2;
+}
+
+.block-with-form {
+  background-color: $colorWhite;
+  padding-left: $margin-1;
+  padding-top: 35px;
+  padding-right: $margin-1;
+  padding-bottom: $margin-1;
+  width: 100%;
+
+  @media (--max-tablet) {
+    & + section-with-blocks {
+      margin-top: $margin-1;
+    }
+  }
+
+  @media(--min-tablet) {
+    max-width: 320px;
+  }
+}
+
+section-with-blocks {
+  display: block;
+}
+
+.login-form > h3 {
+  @media(--max-tablet) {
+    text-align: center;
+  }
+}
+
+.registration-form {
+  display: none;
+}
+
+.login-form > h3, .registration-form > h3 {
+  color: $colorDark;
+  font-size: $size-22;
+  line-height: 28px;
+  font-weight: $FontBold;
+  margin-bottom: 21px;
+
+}
+
+.login-form > p, .registration-form > p {
+  color: $colorDark;
+  font-family: "Open Sans";
+  font-weight: $FontRegular;
+  font-size: $size-12;
+  text-align: center;
+
+}
+
+
+.orange-button {
+  color: $colorWhite;
+  background-color: $colorOrange;
+  padding: 20px;
+  width: 100%;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: $FontDemi;
+  border-radius: 4px;
+  cursor: pointer;
+
+  & + p {
+    margin-top: 32px;
+  }
+}
+
+.about-portal {
+  padding-top: $size-38;
+  padding-bottom: $margin-1;
+
+  & > h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $FontBold;
+    font-size: $size-22;
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+
+  & > p {
+    font-family: "Open Sans";
+    font-weight: $FontRegular;
+    font-size: $size-14;
+    line-height: 24px;
+    color: $colorWhiteOpacity1;
+  }
+
+  & + .container-with-information-item {
+    margin-top: $margin-1;
+  }
+}
+
+.block-with-video {
+  $paddingForImage: 45px;
+  $fontSize: $size-12;
+
+  display: block;
+  color: $colorWhite;
+  min-height: 45px;
+  background-image: url("../img/svg/play-icon.svg");
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  position: relative;
+  padding-right: $paddingForImage;
+
+  &, &::after {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $FontDemi;
+    font-size: $fontSize;
+    line-height: 22px;
+  }
+
+  @media (--max-tablet) {
+    margin-top: 48px;
+  }
+
+  &::after {
+    content: attr(data-text);
+    color: transparent;
+    text-decoration: line-through;
+    text-decoration-color: $colorWhiteOpacity3;
+    width: calc(100% - $paddingForImage);
+    position: absolute;
+    left: 0;
+    top: calc($fontSize / 2 + 2px);
+  }
+}
+
+/* //  .block-with-img{
+//    display: block;
+//    width: 45px;
+//    height: 45px;
+//} */
+
+
+.information-item {
+  padding: 31px 0;
+
+  & > p {
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  /*@media(--max-tablet) {
+    & + & {
+
+      margin-top: $margin-1;
+    }
+  }*/
+}
+
+.information-item, .about-portal {
+  padding-left: $margin-1;
+  padding-right: $margin-1;
+
+
+  background-color: $colorBlue;
+  /*@media (--max-tablet) {
+    width: 100%;
+    max-width: 327px;
+  }
+  @media(--min-tablet) {
+    max-width: 280px;
+  }*/
+}
+
+.item-title--first {
+  background-image: url("../img/svg/24-hours.svg");
+  padding-left: 56px;
+}
+
+.item-title--second {
+  background-image: url("../img/svg/service.svg");
+  padding-left: 77px;
+  background-position: left top 3px;
+}
+
+.item-title--first, .item-title--second {
+  font-family: "Open Sans";
+  font-weight: $FontDemi;
+  font-size: $size-16;
+  line-height: 16px;
+  color: $colorWhiteOpacity1;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  background-repeat: no-repeat;
+}
+
+/*??*/
+form > input + input {
+  margin-top: 10px;
+}
+
+#toggle-form:checked ~ form.registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#toggle-form:checked ~ form.login-form {
+  display: none;
+}
+
+.login-form .m-input__wrapper > input.invalid {
+  border-color: $colorRed;
+}
+
+.span-login, .span-send {
+  display: block;
+  color: $colorBlue;
+  font-family: "Open Sans";
+  font-weight: $FontRegular;
+  font-size: $size-13;
+  line-height: 26px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#toggle-form:checked ~ .login-form > p,
+#toggle-form:checked ~ label > .span-send,
+#toggle-form:not(:checked) ~ label > .span-login {
+  display: none;
+}
+
+.about-portal {
+  display: flex;
+  flex-direction: column;
+}
+
+.block-with-video {
+  margin-top: auto;
+}
+
+
+.section-with-information {
+  grid-template-columns: minmax(0, 327px);
+  justify-content: center;
+  @media (--min-tablet) {
+    grid-template-columns: 320px repeat(auto-fit, 280px);
+  }
+}
+
+.login-page > header,
+.section-with-information,
+.login-page > footer {
+  display: grid;
+  grid-gap: $margin-1;
+
+  @media (--min-tablet) {
+    grid-template-columns: 320px repeat(auto-fit, 280px);
+    grid-gap: 40px;
+  }
+}
+
+.login-page > header,
+.login-page > footer {
+  @media(--max-tablet) {
+    justify-content: center;
+  }
+  @media (--min-tablet) {
+    justify-content: center;
+    grid-template-columns: 320px repeat(1, 280px);
+  }
+  @media (--min-desktop) {
+    grid-template-columns: 320px repeat(2, 280px);
+  }
+}
+
+
+.block-with-form {
+  @media (--min-desktop) {
+    grid-row: span 3;
+    align-self: flex-start;
+  }
+}
+
+.about-portal {
+  @media (--min-desktop) {
+    grid-row: span 2;
+  }
+}
+
+.information-item {
+  @media (--min-desktop) {
+    grid-column: 3;
+    grid-row: span 1;
+  }
+}
+

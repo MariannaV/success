@@ -1,0 +1,10 @@
+.m-select__container > select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 18px) center;
+  background-size: 12px;
+  background-image: url("../img/svg/icon-arrow-bottom.svg"); /*need replace, it's from lekor */
+  &:focus {
+    background-image: url("../img/svg/icon-arrow-top.svg"); /*need replace, it's from lekor */
+  }
+}

@@ -1,0 +1,121 @@
+/* ----------- ШРИФТЫ ----------- */
+$PTSans: 'PT Sans', sans-serif;
+$FontThin: 100;
+$FontUltraLight: 200;
+$FontLight: 300;
+$FontRegular: 400;
+$FontMedium: 500;
+$FontDemi: 600;
+$FontBold: 700;
+$FontHeavy: 800;
+$FontBlack: 900;
+
+$font-size-1: 16px;
+$font-size-2: 20px;
+$font-size-3: 24px;
+$font-size-4: 28px;
+$font-size-5: 32px;
+$font-size-6: 36px;
+
+$size-12: 12px;
+$size-13: 13px;
+$size-14: 14px;
+$size-16: 16px;
+$size-18: 18px;
+$size-20: 20px;
+$size-22: 22px;
+$size-30: 30px;
+$size-38: 38px;
+
+/* ----------- ЦВЕТА ----------- */
+$colorWhite: hsl(0, 0%, 100%);
+$colorBlack: hsl(0, 0%, 0%);
+$colorBlackLight: hsl(0, 0%, 31%);
+$colorBlackFaded: hsl(120, 3%, 23%);
+//$colorGray: hsl(0, 0%, 68%);
+$colorGreen: hsl(138, 66%, 40%);
+$colorGreenLight: color($colorGreen lightness(50%));
+$colorPink: hsl(6, 100%, 69%);
+$colorGold: hsl(42, 100%, 74%);
+/*------ $colorBlue: hsl(204, 61%, 65%);
+$colorBlueLight: color($colorBlue lightness(50%)); ----*/
+$colorPurple: hsl(316, 50%, 63%);
+$colorRed:  hsl(346, 70%, 49%);
+$colorBlue: hsl(211, 98%, 35%);
+$colorBlueDark: hsl(210, 100%, 24%);
+$colorBlueDarkOpacity: hsl(210, 100%, 24%, 0.05);
+$colorOrange: hsl(25, 93%, 48%);
+$colorGray: hsl(0, 0%, 62%);
+$colorDark: rgb(54, 67, 100);
+$colorBlue2: hsl(223, 30%, 30%);
+$colorBlueLight: hsl(206, 37%, 96%);
+
+$colorBlue2Opacity: hsl(223, 30%, 30%, 0.8);
+$colorLightGray: hsl(213, 20%, 83%);
+$colorWhiteOpacity1: hsla(0, 0%, 100%, 0.74);
+$colorWhiteOpacity2: hsla(0, 0%, 100%, 0.8);
+$colorWhiteOpacity3: hsla(0, 0%, 100%, 0.3);
+
+$colorBlueBoxShadow: hsla(210, 100%, 24%, 0.05);
+
+/* ----------- РАЗРЕШЕНИЯ ЭКРАНА ----------- */
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1024px;
+$big-desktop: 1360px;
+
+@custom-media --tablet ($tablet <= width < $desktop);
+@custom-media --min-tablet (width >= $tablet);
+@custom-media --max-tablet (width < $tablet);
+
+@custom-media --desktop ($desktop <= width < $big-desktop);
+@custom-media --min-desktop (width >= $desktop);
+@custom-media --max-desktop (width < $desktop);
+
+@custom-media --min-big-desktop (width >= $big-desktop);
+@custom-media --big-desktop (width <= $big-desktop);
+
+/* ----------- PADDINGS/MARGINS ----------- */
+//$padding-mobile: 24px;
+$margin-1: 24px;
+/* $margin-mobile: 20px; */
+
+$margin-2: 44px;
+$margin-3: 40px;
+$margin-tablet: 34px;
+$margin-desktop: 42px;
+$margin-big-desktop: 56px;
+$margin-big-desktop-vertical: 9vw;
+
+/*----------- CSS Variables -----------*/
+/*:root {
+  --color-fon: red;
+  --color-hover: $colorGold;
+  --margin: $margin-mobile;
+  --font-size-1: 1rem;
+  --font-size-2: 1.2rem;
+  --font-size-3: 1.44rem;
+  --font-size-4: 1.728rem;
+  --font-size-5: 2.074rem;
+  --font-size-6: 2.488rem;
+
+  @media (--min-tablet) {
+    --margin: $margin-tablet;
+    --color-fon: $colorGreen;
+    --font-size-1: 1rem;     
+    --font-size-2: 1.333rem; 
+    --font-size-3: 1.777rem;
+    --font-size-4: 2.369rem; 
+    --font-size-5: 3.157rem;
+    --font-size-6: 4.209rem;
+  }
+
+  @media (--min-desktop) {
+    --margin: $margin-desktop;
+    --color-fon: $colorGray;
+  }
+
+  @media (--min-big-desktop) {
+    --margin: $margin-big-desktop;
+  }
+}*/

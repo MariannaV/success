@@ -1,0 +1,8 @@
+mixin select(data)
+    - classes = data.classes || {}
+    - options = data.options || {}
+    fieldset.m-select__container(class=classes.container)
+        select(name="select" required=data.required onchange="this.blur()")
+            option(value="" disabled hidden selected) #{data.placeholder}
+            - for(let index = 0; index < options.length; index++)
+                option(value=options[index].value) #{options[index].label}

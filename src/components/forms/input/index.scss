@@ -1,0 +1,79 @@
+.m-input__wrapper {
+  position: relative;
+}
+
+.m-input__wrapper > input {
+  padding-top: $inputPaddings;
+
+  &:hover {
+    border-color: $colorBlue2;
+  }
+
+  &:not(:placeholder-shown) + .placeholder,
+  &:focus + .placeholder {
+    font-size: $size-12;
+    line-height: 16px;
+    transform: translateY(-156%);
+    color: $colorBlue2Opacity;
+  }
+
+  &::placeholder {
+    opacity: 0;
+  }
+
+  &:not(:invalid) ~ .error {
+    display: none;
+  }
+}
+
+
+.m-input__wrapper > .placeholder {
+  font-family: "Open Sans";
+  font-weight: $FontDemi;
+  font-size: $size-14;
+  line-height: 19px;
+  color: $colorBlue2;
+  display: flex;
+  position: absolute;
+  left: $inputPaddings;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.3s;
+  top: 51%;
+
+  &::after {
+    content: '*';
+    display: block;
+    color: $colorRed;
+    margin-left: 1px;
+  }
+}
+ .m-errors {
+color: red;
+}
+
+.input-password {
+  input {
+    letter-spacing: 3px;
+  }
+
+  button {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    background-image: url("../img/svg/show-password.svg");
+    background-color: initial;
+    border: none;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.is-shown {
+      background-image: url("../img/svg/hide-password.svg");
+    }
+  }
+}

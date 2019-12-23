@@ -67,15 +67,15 @@ const compileJS = require('gulp-babel')(require('./configs/babelrc.js'))
 
 gulp.task('js', () =>
   gulp
-    .src('src/components/**/*.js', {
+    .src('src/components/**/*.js'/*, {
       since: gulp.lastRun('js'),
-    })
+    }*/)
     .pipe(
       plumber({
         errorHandler: notify.onError('JS (scripts-components): <%= error.message %>'),
       })
     )
-    .pipe(newer('public/js/components'))
+    // .pipe(newer('public/js/components'))
     .pipe(compileJS)
     .pipe(gulp.dest('public/js/components'))
 )
