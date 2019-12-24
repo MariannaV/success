@@ -33,7 +33,7 @@
     align-items: center;
 
     & + footer {
-      margin-top: 81px;
+      margin-top: 39px;
     }
   }
 
@@ -46,7 +46,7 @@
   }
 
   .orange-button {
-    margin-top: 32px;
+    margin-top: 31px;
 
     & + p {
       margin-top: 32px;
@@ -132,7 +132,7 @@
       color: $colorBlue;
       font-family: "Open Sans";
       font-weight: $FontRegular;
-      font-size: $size-13;
+      font-size: $size-12;
       line-height: 26px;
       text-align: center;
       cursor: pointer;
@@ -201,7 +201,7 @@
     display: flex;
     flex-direction: column;
     padding-top: $size-38;
-    padding-bottom: $margin-1;
+    padding-bottom: 33px;
 
     & > p {
       font-family: "Open Sans";
@@ -228,12 +228,12 @@
   .information-item {
     .item-title--24-hours {
       background-image: url("../img/svg/24-hours.svg");
-      padding-left: 56px;
+      padding-left: 62px;
     }
 
     .item-title--delivery {
       background-image: url("../img/svg/service.svg");
-      padding-left: 77px;
+      padding-left: 71px;
       background-position: left top 3px;
     }
   }
