@@ -130,8 +130,14 @@
 /*----------------- FILTERS: START*/
 .date__container {
   display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 36px;
+  @media(max-width: 374px){
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  @media(min-width: 375px) {
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
 }
 /*----------------- FILTERS: END*/
 
@@ -162,7 +168,8 @@
 &+& {
   margin-left: 12px;
   @media (max-width: 374px) {
-    margin-left: 8px;
+    margin-left: 0px;
+    margin-top: 10px;
   }
 }
 
@@ -183,10 +190,11 @@
   background-image: url("../img/svg/datepicker.svg");
   background-repeat: no-repeat;
   background-position: right 8px center;
-  @media (max-width: 374px) {
-    width: 108px;
-    padding: 10px 5px;
-  }
+  background-color: transparent;
+  padding: 10px 5px;
+ /* @media (max-width: 374px) {
+
+  }*/
 
 }
 

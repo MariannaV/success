@@ -1,0 +1,13 @@
+input[type=date] {
+  &::-webkit-clear-button,
+  &::-webkit-inner-spin-button
+  {
+    display: none !important;
+    -webkit-appearance: none !important;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    /*background-image:*/
+    filter: opacity(0);
+  }
+}

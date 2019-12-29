@@ -127,12 +127,29 @@ a, button {
 .orange-button {
   color: hsl(0, 0%, 100%);
   background-color: hsl(25, 93%, 48%);
+  border: none;
+
+
+  @media(--min-tablet) {
+    &:hover {
+      box-shadow: 0 10px 12px rgba(236, 102, 8, 0.39);
+    }
+  }
+}
+.white-button{
+  color: hsl(211, 99%, 69%);
+  background-color: #fff;
+  border: 1px solid hsl(213, 8%, 86%);
+}
+.orange-button, .white-button{
+
+  font-family: "Open Sans";
+  font-weight: 600;
   padding: 20px;
   width: 100%;
-  border: none;
+
   font-family: "Open Sans";
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
-
 }
