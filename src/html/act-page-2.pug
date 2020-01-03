@@ -1,0 +1,103 @@
+include ../components/head/head
+include ../components/forms/datepicker/index
+
+mixin title(data)
+    h1.page-title #{data.text}
+
+mixin filter(data)
+    - classes = data.classes || {}
+    - flags = data.flags || {}
+    .block-with-filters(class=[classes.container, flags.asButtons && 'asButtons' || flags.asCheckbox && 'asCheckbox'].filter(Boolean).join(' '))
+        - labels = data.labels || {}
+        - for(let index = 0; index < labels.length; index++)
+        fieldset.m-filter__container
+            input(type="checkbox" id=labels[index].value )
+            label(for=labels[index].value) #{labels[index].label}
+
+mixin button(data)
+    button(class=data.class type=data.type) #{data.text}
+
+
+
+doctype html
+html(lang="ru")
+    +head({ "title": "Акт сверки", "description": "Акт сверки" })
+        link(rel="stylesheet" href="styles/act-page.css")
+        link(rel="stylesheet" href="libs/flatpickr/dist/flatpickr.min.css")
+    body.act-page.content-pages
+        header
+        main
+            +title({text: "Акт сверки"})
+            form.get-act__form.page-content__container
+                article.m-accordion__container
+                    header
+                        h6(onclick="closeAccordion(this)") 2019
+                    main-section.filters__container
+                        +filter({
+                            flags: { asButtons: true },
+                            labels: [
+                                {value: "1p", label: '1 полугодие'},
+                                {value: "2p", label: '2 полугодие'},
+                            ]
+                        })
+                        +filter({
+                            flags: { asButtons: true },
+                            labels: [
+                                {value: "1k", label: '1 квартал'},
+                                {value: "2k", label: '2 квартал'},
+                                {value: "3k", label: '3 квартал'},
+                                {value: "4k", label: '4 квартал'},
+                            ]
+                        })
+                        +filter({
+                            flags: { asButtons: true },
+                            labels: [
+                                {value: "1m", label: 'Январь'},
+                                {value: "2m", label: 'Февраль'},
+                                {value: "3m", label: 'Март'},
+                                {value: "4m", label: 'Апрель'},
+                                {value: "5m", label: 'Май'},
+                                {value: "6m", label: 'Июнь'},
+                                {value: "7m", label: 'Июль'},
+                                {value: "8m", label: 'Август'},
+                                {value: "9m", label: 'Сентябрь'},
+                                {value: "10m", label: 'Октябрь'},
+                                {value: "11m", label: 'Ноябрь'},
+                                {value: "12m", label: 'Декабрь'},
+                            ]
+                        })
+                article.m-accordion__container
+                    header
+                        h6(onclick="closeAccordion(this)") 2018
+                    main.filters__container
+                        +filter({
+                            flags: { asButtons: true },
+                            labels: [
+                                {value: "2.2p", label: '2 полугодие'},
+                            ]
+                        })
+                        +filter({
+                            flags: { asButtons: true },
+                            labels: [
+                                {value: "2.1k", label: '3 квартал'},
+                                {value: "2.2k", label: '4 квартал'},
+                            ]
+                        })
+                        +filter({
+                            flags: { asButtons: true },
+                            labels: [
+                                {value: "2.8m", label: 'Август'},
+                                {value: "2.9m", label: 'Сентябрь'},
+                                {value: "2.10m", label: 'Октябрь'},
+                                {value: "2.11m", label: 'Ноябрь'},
+                                {value: "2.12m", label: 'Декабрь'},
+                            ]
+                        })
+                .date__container
+                    +datePicker({ name: 'date-start', title: 'Период от' })
+                    +datePicker({ name: 'date-end', title: 'до' })
+                +button({"class": "orange-button", "text": "Скачать акт"})
+        footer
+        script(src="js/components/accordion/index.js" defer)
+        script(src="libs/flatpickr/dist/flatpickr.js" defer)
+        script(src="js/components/act-page/index.js" defer)

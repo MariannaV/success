@@ -1,26 +1,11 @@
 include ../components/head/head
+include ../components/forms/filter/index
 
 mixin title(data)
-    h1.page-title #{data.text}
+    h2.page-title #{data.text}
 
 mixin button(data)
     button(class=data.class type=data.type onclick=data.onclick) #{data.text}
-
-
-mixin filter(data)
-    - classes = data.classes || {}
-    - flags = data.flags || {}
-    .block-with-filters(class=[classes.container, flags.asButtons && 'asButtons' || flags.asCheckbox && 'asCheckbox'].filter(Boolean).join(' '))
-        - labels = data.labels || {}
-        - text = data.text || {}
-        - for(let index = 0; index < labels.length; index++)
-            .m-filter__container
-                input(type="checkbox" id=labels[index].value )
-                label(for=labels[index].value) #{labels[index].label}
-                p #{text[index].text}
-
-
-
 
 doctype html
 html(lang="ru")
@@ -38,12 +23,9 @@ html(lang="ru")
                         +filter({
                             flags: {asCheckbox: true},
                             labels: [
-                                {value: "opt", label: ''},
-                                {value: "rozn", label: ''},
+                                {value: "opt", label: '',text: "оптовые цены"},
+                                {value: "rozn", label: '', text: 'розничные цены'},
                             ],
-                            text: [{text: "оптовые цены"},
-                                  {text: 'розничные цены'},
-                                ],
                         })
                 article.page-content__container-article
                     header
@@ -53,44 +35,25 @@ html(lang="ru")
                             classes: {container: 'vertical-blocks'},
                             flags: {asCheckbox: true},
                             labels: [
-                                {value: "1", label: ''},
-                                {value: "2", label: ''},
-                                {value: "3", label: ''},
-                                {value: "4", label: ''},
-                                {value: "5", label: ''},
-                                {value: "6", label: ''},
-                                {value: "7", label: ''},
-                                {value: "8", label: ''},
-                                {value: "9", label: ''},
-                                {value: "10", label: ''},
-                                {value: "11", label: ''},
-                                {value: "12", label: ''},
-                                {value: "13", label: ''},
-                                {value: "14", label: ''},
-                                {value: "15", label: ''},
-                                {value: "16", label: ''},
-                                {value: "17", label: ''},
-                                {value: "18", label: ''},
+                                {type: "checkbox", value: "1", label: '', text: "Внутренняя отделка" },
+                                {type: "checkbox", value: "2", label: '', text: "Водосточные системы"},
+                                {type: "checkbox", value: "3", label: '', text: "Герметики, клеи"},
+                                {type: "checkbox", value: "4", label: '', text: "Гидроизоляция"},
+                                {type: "checkbox", value: "5", label: '', text: "Защитные козырьки"},
+                                {type: "checkbox", value: "6", label: '', text: "Звукоизоляция"},
+                                {type: "checkbox", value: "7", label: '', text: "Крепеж"},
+                                {type: "checkbox", value: "8", label: '', text: "Листовые металлы"},
+                                {type: "checkbox", value: "9", label: '', text: "Мансардные окна и лестницы"},
+                                {type: "checkbox", value: "10", label: '', text: "Мастики и праймеры"},
+                                {type: "checkbox", value: "11", label: '', text: "Огнебиозащита"},
+                                {type: "checkbox", value: "12", label: '', text: "Пены"},
+                                {type: "checkbox", value: "13", label: '', text: "Плоская кровля"},
+                                {type: "checkbox", value: "14", label: '', text: "Ручной инструмент"},
+                                {type: "checkbox", value: "15", label: '', text: "Скатная кровля"},
+                                {type: "checkbox", value: "16", label: '', text: "Утеплители"},
+                                {type: "checkbox", value: "17", label: '', text: "Фасады"},
+                                {type: "checkbox", value: "18", label: '', text: "Фундаменты"},
 
-                            ],
-                            text: [{text: "Внутренняя отделка"},
-                                {text: "Водосточные системы"},
-                                {text: "Герметики, клеи"},
-                                {text: "Гидроизоляция"},
-                                {text: "Защитные козырьки"},
-                                {text: "Звукоизоляция"},
-                                {text: "Крепеж"},
-                                {text: "Листовые металлы"},
-                                {text: "Мансардные окна и лестницы"},
-                                {text: "Мастики и праймеры"},
-                                {text: "Огнебиозащита"},
-                                {text: "Пены"},
-                                {text: "Плоская кровля"},
-                                {text: "Ручной инструмент"},
-                                {text: "Скатная кровля"},
-                                {text: "Утеплители"},
-                                {text: "Фасады"},
-                                {text: "Фундаменты"},
                             ],
                         })
 

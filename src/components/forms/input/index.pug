@@ -1,12 +1,16 @@
 mixin input(data)
     - classes = data.classes || {}
     - children = data.children || {}
-    fieldset.m-input__container(class=classes.container)
+    .m-input__container(class=classes.container)
         if data.title
             legend #{data.title}
         .m-input__wrapper
             input(name=data.name type=data.type placeholder='empty')
-            .placeholder #{data.placeholder}
+            if (data.type === 'number')
+                button(name='minus') -
+                button(name='plus') +
+            if (data.placeholder)
+                .placeholder #{data.placeholder}
             if (children.wrapper)
                 #{children.wrapper}
         .m-errors

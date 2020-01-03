@@ -30,17 +30,17 @@
   }
 
   & > header {
-    h6 {
+    select {
       color: $colorBlue2;
       font-family: 'Montserrat', sans-serif;
       font-weight: $FontBold;
       margin-bottom: 24px;
       background-image: url("../img/svg/arrow-down.svg");
-      max-width: 75px;
+      max-width: 95px;
       background-repeat: no-repeat;
       background-position: right center;
       cursor: pointer;
-
+      border: none;
       @media(--max-tablet) {
         font-size: $size-18;
         line-height: 22px;

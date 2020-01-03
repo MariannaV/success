@@ -5,4 +5,4 @@ mixin select(data)
         select(name="select" required=data.required onchange="this.blur()")
             option(value="" disabled hidden selected) #{data.placeholder}
             - for(let index = 0; index < options.length; index++)
-                option(value=options[index].value) #{options[index].label}
+                option(value=options[index].value selected=options[index].selected) #{options[index].label}

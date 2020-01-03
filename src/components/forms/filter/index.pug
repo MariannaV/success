@@ -1,0 +1,11 @@
+mixin filter(data)
+    - classes = data.classes || {}
+    - flags = data.flags || {}
+    .block-with-filters(class=[classes.container, flags.asButtons && 'asButtons' || flags.asCheckbox && 'asCheckbox' || flags.asRadio && 'asRadio'].filter(Boolean).join(' '))
+        - labels = data.labels || {}
+        - for(let index = 0; index < labels.length; index++)
+            .m-filter__container
+                input(type=labels[index].type id=labels[index].value name=labels[index].name)
+                label(for=labels[index].value) #{labels[index].label}
+                if (labels[index].text)
+                    p #{labels[index].text}
