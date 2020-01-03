@@ -10,9 +10,9 @@ mixin filter(data)
     .block-with-filters(class=[classes.container, flags.asButtons && 'asButtons' || flags.asCheckbox && 'asCheckbox'].filter(Boolean).join(' '))
         - labels = data.labels || {}
         - for(let index = 0; index < labels.length; index++)
-        fieldset.m-filter__container
-            input(type="checkbox" id=labels[index].value )
-            label(for=labels[index].value) #{labels[index].label}
+            fieldset.m-filter__container
+                input(type="checkbox" id=labels[index].value )
+                label(for=labels[index].value) #{labels[index].label}
 
 mixin button(data)
     button(class=data.class type=data.type) #{data.text}
@@ -22,7 +22,7 @@ mixin button(data)
 doctype html
 html(lang="ru")
     +head({ "title": "Акт сверки", "description": "Акт сверки" })
-        link(rel="stylesheet" href="styles/act-page.css")
+        link(rel="stylesheet" href="styles/act-page-2.css")
         link(rel="stylesheet" href="libs/flatpickr/dist/flatpickr.min.css")
     body.act-page.content-pages
         header
