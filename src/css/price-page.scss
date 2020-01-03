@@ -1,0 +1,184 @@
+@import 'helpers/postcss-reset/mobile.css';
+@import 'helpers/variables.scss';
+@import 'helpers/fonts.scss';
+@import 'helpers/base.scss';
+@import 'helpers/mixins.scss';
+
+
+.price-page {
+
+
+  @media(max-width: 599px) {
+    .white-button, .orange-button {
+      margin: 8px auto;
+      width: 100%;
+      /* max-width: 320px;*/
+    }
+  }
+  @media(--max-tablet) {
+    & > main {
+      padding: $margin-1;
+    }
+  }
+
+  @media(--min-tablet) {
+    .orange-button {
+      margin-right: auto;
+    }
+    .white-button {
+      & + .white-button {
+        margin-left: 24px;
+      }
+    }
+
+  }
+  @media(--min-big-desktop) {
+    & > main {
+      margin-left: 29.5vw;
+      min-width: 81vw;
+    }
+  }
+
+  .white-button, .orange-button {
+    width: auto;
+    padding: 20px 24px;
+  }
+
+
+}
+
+.page-content__container-article {
+
+  & > header {
+    h5 {
+      color: $colorBlue2;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: $FontBold;
+      margin-bottom: 14px;
+      background-repeat: no-repeat;
+      background-position: right center;
+
+      @media(--max-tablet) {
+        font-size: $size-18;
+        line-height: 22px;
+      }
+      @media(--min-tablet) {
+        font-size: $size-22;
+        line-height: 28px;
+      }
+    }
+  }
+
+  & > header {
+    h6 {
+      color: $colorBlue2;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: $FontBold;
+      margin-bottom: 24px;
+      background-repeat: no-repeat;
+      background-position: right center;
+      border-bottom: 2px solid $colorBlue;
+      padding-bottom: 10px;
+      @media(--max-tablet) {
+        font-size: $size-14;
+        line-height: 18px;
+      }
+      @media(--min-tablet) {
+        font-size: $size-16;
+        line-height: 20px;
+      }
+    }
+  }
+
+
+  & + & {
+    margin-top: 15px;
+  }
+
+  & + .page-content__container-buttons {
+    margin-top: 44px;
+  }
+}
+
+
+.block-with-filters.asCheckbox {
+
+
+  display: flex;
+  flex-wrap: wrap;
+
+
+  &.vertical-blocks {
+    display: block;
+
+
+    @media(max-width: 499px) {
+      column-count: 1;
+    }
+    @media(min-width: 500px) and (max-width: 1359px) {
+      column-count: 2;
+    }
+    @media(--min-big-desktop) {
+      column-count: 3;
+
+    }
+  }
+
+  .m-filter__container {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+    margin-bottom: 17px;
+    padding-top: 5px;
+
+    & > input {
+      display: none;
+    }
+
+    & > label {
+      display: block;
+      border: 1px solid $colorLightGray;
+      background-color: $colorLightGray2;
+      min-width: 16px;
+      min-height: 16px;
+      cursor: pointer;
+
+      & + p {
+        margin-left: 8px;
+      }
+    }
+
+    & > p {
+      display: block;
+      font-family: "Open Sans";
+      font-weight: $FontDemi;
+      font-size: $size-13;
+      line-height: 20px;
+      color: $colorBlue2Opacity;
+
+    }
+
+    & > input:checked + label {
+      background-image: url("../img/svg/checked-checkbox.svg");
+      background-size: 8px;
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+
+  }
+
+}
+
+.page-content__container-buttons {
+
+  display: flex;
+  justify-content: flex-end;
+  @media(max-width: 599px) {
+    flex-direction: column;
+
+  }
+  @media(--max-tablet) {
+    justify-content: space-between;
+  }
+}
