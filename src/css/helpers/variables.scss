@@ -5,7 +5,7 @@ $FontUltraLight: 200;
 $FontLight: 300;
 $FontRegular: 400;
 $FontMedium: 500;
-$FontDemi: 600;
+  $FontDemi: 600;
 $FontBold: 700;
 $FontHeavy: 800;
 $FontBlack: 900;
@@ -20,6 +20,7 @@ $font-size-6: 36px;
 $size-12: 12px;
 $size-13: 13px;
 $size-14: 14px;
+$size-15: 15px;
 $size-16: 16px;
 $size-18: 18px;
 $size-19: 19px;
@@ -28,6 +29,7 @@ $size-22: 22px;
 $size-28: 28px;
 $size-30: 30px;
 $size-38: 38px;
+$size-30: 30px;
 
 /* ----------- ЦВЕТА ----------- */
 $colorWhite: hsl(0, 0%, 100%);
@@ -56,6 +58,7 @@ $colorBlueLight2: hsl(210, 42%, 95%);
 
 $colorBlue2Opacity: hsl(223, 30%, 30%, 0.8);
 $colorBlue3Opacity: hsl(211, 100%, 34%);
+$colorBlue4Opacity: hsla(211, 98%, 35%, 0.4);
 $colorLightGray: hsl(213, 20%, 83%);
 $colorLightGray2: hsl(223, 37%, 96%);
 $colorWhiteOpacity1: hsla(0, 0%, 100%, 0.74);

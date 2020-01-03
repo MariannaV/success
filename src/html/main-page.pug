@@ -1,0 +1,97 @@
+include ../components/head/head
+include ../components/content/information-block/index
+include ../components/content/link/index
+
+mixin title(data)
+    h2.page-title #{data.text}
+
+mixin balance-block(data)
+    .main-page-content__block
+        .main-page-content__block-title #{data.title}
+        .main-page-content__block-cost #{data.value}
+
+
+
+doctype html
+html(lang="ru")
+    +head({ "title": "Главная", "description": "Главная страница" })
+        link(rel="stylesheet" href="styles/main-page.css")
+    body.main-page.content-pages
+        header
+        main
+            +title({text: ' "ООО Нижегородский ремонтник" ' })
+            .user-name Татьяна Иванова
+            .main-page-content__container
+                h6 Баланс лицевого счёта
+                .main-page-content__blocks
+                    +balance-block({
+                        title: "Предоплата",
+                        value: "863.29"
+                    })
+                    +balance-block({
+                        title: "Кредитный лимит",
+                        value: "30 000.00"
+                    })
+                    +balance-block({
+                        title: "Общая задолженность",
+                        value: "0.00"
+                    })
+                    +balance-block({
+                        title: "Просроченная задолженность",
+                        value: "0.00"
+                    })
+            #slider-actions.m-slider.main-page-content__slider
+                h5 Акции
+                .slider-nav
+                    .slider-nav-prev.is-disabled(onclick="handleNavigationButtons(this, {isPrevButton: true})")
+                    .slider-nav-next(onclick="handleNavigationButtons(this, {isNextButton: true})")
+                .section-slider-item-blocks
+                    .slider-item-block
+                        .slider-item-block-description.orange-slide
+                            h6 Добавка для зимнего бетонирования
+                            p за 369 ₽
+                                span за шт
+                        .slider-item-block-img
+                            img(src="img/content/slider-item.png")
+                    .slider-item-block
+                        .slider-item-block-description.blue-slide
+                            h6 Добавка для зимнего бетонирования
+                            p за 369 ₽
+                                span за шт
+                        .slider-item-block-img
+                            img(src="img/content/slider-item.png")
+                    .slider-item-block
+                        .slider-item-block-description.gray-slide
+                            h6 Добавка для зимнего бетонирования
+                            p за 369 ₽
+                                span за шт
+                        .slider-item-block-img
+                            img(src="img/content/slider-item.png")
+                    .slider-item-block
+                        .slider-item-block-description.orange-slide
+                            h6 Добавка для зимнего бетонирования
+                            p за 369 ₽
+                                span за шт
+                        .slider-item-block-img
+                            img(src="img/content/slider-item.png")
+            #slider-news.m-slider.slider.main-page-content__slider
+                h5 Новости
+                .slider-nav
+                    .slider-nav-prev.is-disabled(onclick="handleNavigationButtons(this, {isPrevButton: true})")
+                    .slider-nav-next(onclick="handleNavigationButtons(this, {isNextButton: true})")
+                .section-slider-item-blocks
+                    .slider-item-block(style='background: pink;height: calc(200px + 10vw);')
+                    .slider-item-block(style='background: blue;height: calc(200px + 10vw);')
+                    .slider-item-block(style='background: green;height: calc(200px + 10vw);')
+                    .slider-item-block(style='background: orange;height: calc(200px + 10vw);')
+
+            +information-block({class: "about-portal"})
+                h3 В2В портал компании Саксэс
+                p Вы можете обратиться за консультацией или отправить запрос через онлайн-консультант, форму обратной связи или по телефону.
+                +link({
+                    class: 'with-video',
+                    'data-text': 'Смотреть видео о возможностях портала'
+                }) Смотреть видео о возможностях портала
+
+        footer
+        script(src="js/components/main-page/index.js" defer)

@@ -74,8 +74,10 @@ a, button {
 .content-pages {
   background-color: $colorBlueLight;
   & > main {
+    padding: var(--horizontal-paddings);
+
     @media(--min-tablet) {
-      padding: $margin-3;
+      --horizontal-paddings: $margin-3;
     }
     @media (--min-desktop) {
       max-width: 63.24vw;
@@ -152,4 +154,32 @@ a, button {
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.about-portal {
+  display: flex;
+  flex-direction: column;
+  padding-top: $size-38;
+  padding-bottom: 33px;
+
+  & > p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: $FontRegular;
+    font-size: $size-14;
+    line-height: 24px;
+    color: $colorWhiteOpacity1;
+  }
+
+  .link {
+    @media (--max-tablet) {
+      margin-top: 48px;
+    }
+    @media (--min-tablet) {
+      margin-top: auto;
+    }
+  }
+
+  & + .container-with-information-item {
+    margin-top: $margin-1;
+  }
 }

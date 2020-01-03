@@ -1,8 +1,9 @@
 $inputPaddings: 16px;
 
-fieldset.m-input__container,
-fieldset.m-select__container {
-  & + fieldset {
+.m-input__container,
+.m-select__container {
+  & + .m-input__container,
+  & + .m-select__container {
     margin-top: 16px;
   }
 }
