@@ -1,0 +1,69 @@
+include ../components/head/head
+
+mixin title(data)
+    h2.page-title #{data.text}
+
+mixin button(data)
+    button(class=data.class type=data.type) #{data.text}
+
+doctype html
+html(lang="ru")
+    +head({ "title": "Карточка товара", "description": "Карточка товара" })
+        link(rel="stylesheet" href="styles/product-page.css")
+    body.product-page.content-pages
+        header
+        main
+            +title({text: "Дюбель для изоляции izo c пластиковым гвоздем 10х100 мм (упак. 1000 шт)"})
+            .product-preview
+                .product-preview__images
+                   img(src="img/svg/product-img.svg")
+                .product-preview__description
+                    article
+                        span Артикул
+                        span 29807
+                        span Единица измерения
+                        span шт
+                    article
+                        h6 Hаличие на складах в Нижнем Новгороде
+                        span Склад Мос. шоссе
+                        span 345 шт
+                        span Склад Дружный
+                        span 754 шт
+            .product-cart
+                .product-cart-price
+                    h6 Ваша цена
+                    span 1896.82
+                        span ₽
+                .product-cart-sum
+                    h6 Сумма
+                    span  11 380.92
+                        span ₽
+                .counter-container
+                    button.counter-minus
+                    span.counter-value 1
+                        span шт
+                    button.counter-plus
+                +button({class:"orange-button", text:"В корзину"})
+            .product-description(onclick="productHandlers.description.navigation.onToggleActiveTab(event)")
+                .product-description__navigation
+                    label(for="1").product-description__navigation-block.active-tab Описание
+                    label(for="2").product-description__navigation-block Характеристики
+                .product-description__content
+                     label(for="1").product-description__navigation-block.active-tab Описание
+                     input(type="radio" checked id="1" name="tabs")
+                     .product-description__content-block
+                           h6 Описание
+                           p Заключается предназначение XDP-оклада утепленного в ускорении и упрощении процесса установки окон, гидроизоляции проемов по периметру и в ограждении утеплителя от конденсата. Он спасает теплоизоляцию от влаги, появляющейся на накладках из металла, если оконный короб и система пароизоляции установлены негерметично.
+                           p Основой стройматериала является водонепроницаемая мембрана EUROTOP, оснащенная дополнительным утеплением. У данной основы паропроницаемость очень высока. Для монтажа XDP-оклада не нужно срывать обрешетку и снимать контр-рейки. Он помогает создавать надежные примыкания, сокращает и время и трудозатраты на подвод к окнам мансард гидроизоляции. Труд кровельщика с этим стройматериалом становится гораздо проще. Оклады выпускаются для окон всех типоразмеров.
+                     label(for="2").product-description__navigation-block Характеристики
+                     input(type="radio" id="2" name="tabs")
+                     .product-description__content-block
+                            h6 Характеристики
+                            p Заключается предназначение XDP-оклада утепленного в ускорении и упрощении процесса установки окон, гидроизоляции проемов по периметру и в ограждении утеплителя от конденсата. Он спасает теплоизоляцию от влаги, появляющейся на накладках из металла, если оконный короб и система пароизоляции установлены негерметично.
+                            p Основой стройматериала является водонепроницаемая мембрана EUROTOP, оснащенная дополнительным утеплением. У данной основы паропроницаемость очень высока. Для монтажа XDP-оклада не нужно срывать обрешетку и снимать контр-рейки. Он помогает создавать надежные примыкания, сокращает и время и трудозатраты на подвод к окнам мансард гидроизоляции. Труд кровельщика с этим стройматериалом становится гораздо проще. Оклады выпускаются для окон всех типоразмеров.
+
+        footer
+
+        script(src="js/components/product-page/index.js" async)
+
+

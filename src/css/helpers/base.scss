@@ -45,6 +45,10 @@ a, button {
   cursor: pointer;
 }
 
+button:hover, button:focus {
+  outline: none;
+}
+
 @media (--max-tablet) {
   .mobile-hide {
     display: none !important;
@@ -73,21 +77,22 @@ a, button {
 /*---common styles---*/
 .content-pages {
   background-color: $colorBlueLight;
+
   & > main {
     padding: var(--horizontal-paddings);
 
     @media(--min-tablet) {
       --horizontal-paddings: $margin-3;
+
     }
     @media (--min-desktop) {
-      max-width: 63.24vw;
-      margin-right: 7.5vw;
+      max-width: 69.1186vw;
+      margin-right: 4.5vw;
     }
   }
 }
 
 .page-title {
-  //max-width: 860px;
   color: $colorBlue2;
   font-family: 'Montserrat', sans-serif;
   font-weight: $FontBold;
@@ -138,20 +143,18 @@ a, button {
     }
   }
 }
-.white-button{
+
+.white-button {
   color: hsl(211, 99%, 69%);
   background-color: #fff;
   border: 1px solid hsl(213, 8%, 86%);
 }
-.orange-button, .white-button{
 
+.orange-button, .white-button {
   font-family: "Open Sans";
   font-weight: 600;
   padding: 20px;
   width: 100%;
-
-  font-family: "Open Sans";
-  font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -182,4 +185,107 @@ a, button {
   & + .container-with-information-item {
     margin-top: $margin-1;
   }
+}
+
+/*//TABLE*/
+.m-table {
+  @media(--max-tablet) {
+    width: 100%;
+    display: block;
+  }
+  @media(--min-desktop) {
+    min-width: calc(100% - 40px);
+  }
+  font-family: "Open Sans", sans-serif;
+  font-weight: $FontDemi;
+  color: $colorBlue2;
+  text-align: left;
+  padding-top: 15px;
+
+  & > thead {
+    font-weight: $FontBold;
+    font-size: $size-12;
+    border-bottom: 2px solid $colorBlue3Opacity;
+
+    th {
+      padding-bottom: 15px;
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid $colorLightGray;
+
+    & td {
+      padding-top: 25px;
+      padding-bottom: 10px;
+      padding-right: 20px;
+
+      & > span {
+        display: block;
+
+        &.article {
+
+          color: $colorGray;
+        }
+      }
+    }
+  }
+}
+
+/*----------------- DATEPICKER: START*/
+.date__container {
+  display: flex;
+  @media(max-width: 374px) {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  @media(min-width: 375px) {
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+}
+
+.m-datepicker__container {
+  display: flex;
+  align-items: center;
+  font-family: "Open Sans";
+  font-weight: $FontDemi;
+  font-size: 13px;
+  line-height: 20px;
+  color: $colorBlue2;
+
+  & > legend {
+    margin-right: 10px;
+
+    @media(--max-mobile) {
+      margin-bottom: 10px;
+
+    }
+  }
+
+  & + & {
+    margin-left: 12px;
+    @media (max-width: 374px) {
+      margin-left: 0px;
+      margin-top: 10px;
+    }
+  }
+
+  @media(--max-mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.m-datepicker__container .flatpickr-input {
+  width: 128px;
+  padding: 10px;
+  border: 1px solid $colorLightGray;
+  border-radius: 4px;
+  background-image: url("../img/svg/datepicker.svg");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-color: transparent;
+  padding: 10px 5px;
 }

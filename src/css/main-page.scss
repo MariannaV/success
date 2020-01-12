@@ -30,8 +30,16 @@
     & > main {
       --horizontal-paddings: $margin-1;
     }
+
   }
 
+  @media(--min-desktop) {
+    & > main {
+      width: 55.883vw;
+      width: 61.765vw;
+      margin-right: 11.765vw;
+    }
+  }
 
   & .about-portal {
     background-color: $colorWhite;
@@ -81,6 +89,11 @@
       }
     }
   }
+
+  /* @media(--min-desktop){
+     max-width: 61.8vw;
+     margin-right: 14.85vw;
+   }*/
 }
 
 .main-page-content__container {
@@ -110,19 +123,20 @@
     }
 
 
-
   }
+
   & + #slider-actions {
     margin-top: 63px;
   }
+
   .main-page-content__block {
     font-family: "Open Sans";
     font-weight: $FontRegular;
     font-size: $size-13;
     line-height: 18px;
     color: $colorBlue2;
-    @media(--max-tablet){
-      &:not(:last-child){
+    @media(--max-tablet) {
+      &:not(:last-child) {
         margin-bottom: 12px;
       }
     }
@@ -224,11 +238,12 @@
       width: 560px;
 
     }
+
     &:last-child {
       --horizontal-gap: 0
     }
-    .slider-item-block-description {
 
+    .slider-item-block-description {
       font-family: Montserrat;
 
       color: $colorWhite;
@@ -239,6 +254,7 @@
       @media(min-width: 500px) {
         padding: 30px 25px;
       }
+
       & > h6 {
 
         font-weight: $FontBlack;
@@ -257,7 +273,8 @@
         }
 
       }
-      &>p{
+
+      & > p {
         font-weight: $FontBlack;
 
         @media(max-width: 499px) {
@@ -269,7 +286,7 @@
           line-height: 37px;
         }
 
-        &>span{
+        & > span {
 
           margin-left: 8px;
           @media(max-width: 499px) {
@@ -291,10 +308,12 @@
     &.orange-slide {
       background-color: $colorOrange;
     }
-    &.blue-slide{
+
+    &.blue-slide {
       background-color: $colorBlue
     }
-    &.gray-slide{
+
+    &.gray-slide {
       background-color: $colorGray;
     }
   }
@@ -317,14 +336,15 @@
 
 .slider-nav {
   display: flex;
-@media(--max-tablet){
-  grid-column: 4;
-}
-  @media(--max-desktop){
+  @media(--max-tablet) {
+    grid-column: 4;
+  }
+  @media(--max-desktop) {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     grid-column-gap: 10px;
   }
+
   .is-disabled {
     &:after {
       opacity: 0.4;
@@ -342,10 +362,11 @@
   background-color: $colorBlueLight;
   cursor: pointer;
   border-radius: 50%;
-  @media(--min-desktop){
+  @media(--min-desktop) {
     padding: 3px;
   }
-  &:after{
+
+  &:after {
     content: "";
     display: block;
     width: 100%;
@@ -353,9 +374,10 @@
     background-color: $colorWhite;
     background-repeat: no-repeat;
     background-position: center;
-  border-radius: 50%;
+    border-radius: 50%;
 
   }
+
   @media (--min-desktop) {
     position: absolute;
     top: 50%;
@@ -365,9 +387,10 @@
 
 .slider-nav-prev {
 
-  &:after{
+  &:after {
     background-image: url('../img/svg/arrow-left.svg');
   }
+
   @media (--min-desktop) {
     left: 0;
     transform: translateX(-50%);
@@ -375,12 +398,13 @@
 }
 
 .slider-nav-next {
-/*  background-image: url('../img/svg/arrow-right.svg');*/
+  /*  background-image: url('../img/svg/arrow-right.svg');*/
 
 
-  &:after{
+  &:after {
     background-image: url('../img/svg/arrow-right.svg');
   }
+
   @media (--min-desktop) {
     right: 0;
     transform: translateX(50%);
@@ -407,9 +431,10 @@
 }
 
 #slider-news {
-  .slider-item-block{
+  .slider-item-block {
     width: 100%;
   }
+
   & + .information-block.about-portal {
     margin-top: 45px;
   }
