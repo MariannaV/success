@@ -1,8 +1,12 @@
 mixin select(data)
     - classes = data.classes || {}
     - options = data.options || {}
-    fieldset.m-select__container(class=classes.container)
-        select(name="select" required=data.required onchange="this.blur()")
-            option(value="" disabled hidden selected) #{data.placeholder}
-            - for(let index = 0; index < options.length; index++)
-                option(value=options[index].value selected=options[index].selected) #{options[index].label}
+    .m-select__container(class=classes.container)
+        if data.title
+            legend #{data.title}
+        .m-select__wrapper
+            select(name="select" required=data.required onchange="this.blur()")
+                option(value="" disabled hidden selected) #{data.placeholder}
+                - for(let index = 0; index < options.length; index++)
+                    option(value=options[index].value selected=options[index].selected) #{options[index].label}
+        .m-errors

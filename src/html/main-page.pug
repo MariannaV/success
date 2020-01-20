@@ -1,15 +1,17 @@
 include ../components/head/head
+include ../components/header/index
 include ../components/content/information-block/index
 include ../components/content/link/index
+include ../components/footer/index
 
 mixin title(data)
     h2.page-title #{data.text}
 
 mixin balance-block(data)
-    .main-page-content__block
-        .main-page-content__block-title #{data.title}
-        .main-page-content__block-cost #{data.value}
-
+    .balance__block
+        .balance__block-title #{data.title}
+        .balance__block-cost #{data.value}
+            span.rub
 
 
 doctype html
@@ -17,7 +19,7 @@ html(lang="ru")
     +head({ "title": "Главная", "description": "Главная страница" })
         link(rel="stylesheet" href="styles/main-page.css")
     body.main-page.content-pages
-        header
+        +header()
         main
             +title({text: ' "ООО Нижегородский ремонтник" ' })
             .user-name Татьяна Иванова
@@ -93,5 +95,6 @@ html(lang="ru")
                     'data-text': 'Смотреть видео о возможностях портала'
                 }) Смотреть видео о возможностях портала
 
-        footer
+        +footer()
+        script(src="js/components/header/index.js" defer)
         script(src="js/components/main-page/index.js" defer)

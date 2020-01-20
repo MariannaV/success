@@ -1,0 +1,7 @@
+<svg id="shopping-cart" xmlns="http://www.w3.org/2000/svg" width="24.001" height="24" viewBox="0 0 24.001 24">
+  <rect id="Rectangle_2602" data-name="Rectangle 2602" width="24" height="24" transform="translate(0)" fill="none"/>
+  <g id="Group_2524" data-name="Group 2524" transform="translate(-772 -411)">
+    <path id="Union_9" data-name="Union 9" d="M3244,535a2,2,0,1,1,2,2A2,2,0,0,1,3244,535Zm-13,0a2,2,0,1,1,2,2A2,2,0,0,1,3231,535Zm3-4a1,1,0,0,1-.969-.757L3230.219,519H3228a1,1,0,1,1,0-2h3a1,1,0,0,1,.97.757L3234.781,529h10.6l3-6H3237a1,1,0,1,1,0-2h13a1,1,0,0,1,.895,1.447l-4,8A1,1,0,0,1,3246,531Z" transform="translate(-2455 -102)" fill="#ec6608"/>
+    <path id="Path_2461" data-name="Path 2461" d="M794,420" fill="#ec6608" stroke="gray" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

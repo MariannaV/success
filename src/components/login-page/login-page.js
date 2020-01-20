@@ -20,18 +20,28 @@ document.querySelector('.login-form').addEventListener("submit", (event) => {
         }), {});
     let isValid = true;
 
-    [{
-        fieldName: 'login',
-        checks: [
-            validations.required(),
-            validations.minLength(5),
-            validations.maxLength(10),
-            validations.onlyEnglishAndNumbers()
-        ]
-    }].forEach(({fieldName, checks}) => {
+    [
+        {
+            fieldName: 'login',
+            checks: [
+                validations.required(),
+                validations.minLength(5),
+                validations.maxLength(10),
+                validations.onlyEnglishAndNumbers()
+            ],
+        },
+        {
+            fieldName: 'password',
+            checks: [
+                validations.required(),
+                validations.minLength(10),
+                validations.maxLength(100)
+            ]
+        }
+    ].forEach(({fieldName, checks}) => {
         const field = fields[fieldName],
             {value} = field,
-            errorsContainer = field.closest('fieldset').querySelector('.m-errors'),
+            errorsContainer = field.closest('[class$="__container"]').querySelector('.m-errors'),
             foundErrors = checks.map(check => check(value)).filter(Boolean);
 
         errorsContainer.innerHTML = '';
@@ -49,10 +59,10 @@ document.querySelector('.login-form').addEventListener("submit", (event) => {
         } else {
             field.classList.remove('invalid');
         }
-    })
+    });
 
     if (isValid) {
-        /* отправляем данные */
+        /* здесь должен быть код, отправляющий данные */
         form.classList.remove('invalid')
     } else {
         form.classList.add('invalid')

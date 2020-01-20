@@ -3,6 +3,7 @@
 @import 'helpers/fonts.scss';
 @import 'helpers/base.scss';
 @import 'helpers/mixins.scss';
+@import '../components/header/index.scss';
 @import '../components/content/link/index.scss';
 @import '../components/content/information-block/index.scss';
 
@@ -33,11 +34,18 @@
 
   }
 
-  @media(--min-desktop) {
+
     & > main {
-      width: 55.883vw;
+     /* width: 55.883vw;*/
+      @media(--min-desktop) {
       width: 61.765vw;
-      margin-right: 11.765vw;
+
+    }
+    @media(--desktop) {
+      margin-right: 9vw !important;
+    }
+    @media(--min-big-desktop){
+      margin-right: 12vw !important;
     }
   }
 
@@ -129,7 +137,7 @@
     margin-top: 63px;
   }
 
-  .main-page-content__block {
+  .balance__block {
     font-family: "Open Sans";
     font-weight: $FontRegular;
     font-size: $size-13;
@@ -150,11 +158,12 @@
       }
     }
 
-    .main-page-content__block-title {
+    .balance__block-title {
+
       margin-bottom: 9px;
     }
 
-    .main-page-content__block-cost {
+    .balance__block-cost {
       font-weight: $FontDemi;
       font-size: $size-19;
       line-height: 20px;

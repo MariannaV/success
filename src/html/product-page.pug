@@ -1,4 +1,6 @@
 include ../components/head/head
+include ../components/header/index
+
 
 mixin title(data)
     h2.page-title #{data.text}
@@ -11,7 +13,7 @@ html(lang="ru")
     +head({ "title": "Карточка товара", "description": "Карточка товара" })
         link(rel="stylesheet" href="styles/product-page.css")
     body.product-page.content-pages
-        header
+        +header()
         main
             +title({text: "Дюбель для изоляции izo c пластиковым гвоздем 10х100 мм (упак. 1000 шт)"})
             .product-preview

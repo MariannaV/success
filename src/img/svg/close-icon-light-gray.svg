@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="icon_delete" transform="translate(-1144 -368)" opacity="0.5">
+    <g id="Group_3047" data-name="Group 3047" transform="translate(264 -933)">
+      <rect id="Rectangle_3035" data-name="Rectangle 3035" width="24" height="24" rx="12" transform="translate(880 1301)" fill="#fff"/>
+    </g>
+    <rect id="Rectangle_3035-2" data-name="Rectangle 3035" width="16" height="16" transform="translate(1148 371)" fill="none"/>
+    <g id="Rectangle_3037" data-name="Rectangle 3037" transform="translate(1162.364 375.05) rotate(135)" fill="none" stroke="#364364" stroke-width="1">
+      <rect width="16" height="2" rx="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="15" height="1" rx="0.5" fill="none"/>
+    </g>
+    <g id="Path_2546" data-name="Path 2546" transform="translate(1160.95 386.364) rotate(-135)" fill="none">
+      <path d="M1,0H15a1,1,0,0,1,0,2H1A1,1,0,1,1,1,0Z" stroke="none"/>
+      <path d="M 1 0 L 3.103549957275391 0 L 15 0 C 15.55228042602539 0 16 0.4477200508117676 16 1 C 16 1.552279949188232 15.55228042602539 2 15 2 L 1 2 C 0.4477100372314453 2 0 1.552279949188232 0 1 C 0 0.4477200508117676 0.4477100372314453 0 1 0 Z" stroke="none" fill="#364364"/>
+    </g>
+  </g>
+</svg>

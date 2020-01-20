@@ -5,7 +5,7 @@ $FontUltraLight: 200;
 $FontLight: 300;
 $FontRegular: 400;
 $FontMedium: 500;
-  $FontDemi: 600;
+$FontDemi: 600;
 $FontBold: 700;
 $FontHeavy: 800;
 $FontBlack: 900;
@@ -55,18 +55,23 @@ $colorBlue2: hsl(223, 30%, 30%);
 
 $colorBlueLight: hsl(206, 37%, 96%);
 $colorBlueLight2: hsl(210, 42%, 95%);
+$colorBlueLight3: hsl(210, 53%, 93%);
 
 $colorBlue2Opacity: hsl(223, 30%, 30%, 0.8);
 $colorBlue3Opacity: hsl(211, 100%, 34%);
 $colorBlue4Opacity: hsla(211, 98%, 35%, 0.4);
+$colorBlue2Opacity2: hsla(223, 30%, 30%, 0.6);
 $colorLightGray: hsl(213, 20%, 83%);
 $colorLightGray2: hsl(223, 37%, 96%);
 $colorWhiteOpacity1: hsla(0, 0%, 100%, 0.74);
 $colorWhiteOpacity2: hsla(0, 0%, 100%, 0.8);
 $colorWhiteOpacity3: hsla(0, 0%, 100%, 0.3);
 $colorGrayOpacity: hsl(0, 0%, 62%, 0.2);
+$colorBlackOpacity: hsla(0, 0%, 0%, 0.16);
+
 
 $colorBlueBoxShadow: hsla(210, 100%, 24%, 0.05);
+$colorBlueBoxShadow2: hsla(210, 100%, 24%, 0.2);
 
 /* ----------- РАЗРЕШЕНИЯ ЭКРАНА ----------- */
 $mobile: 320px;

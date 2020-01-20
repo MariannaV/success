@@ -1,0 +1,147 @@
+include ../forms/button/index
+
+mixin balance-block(data)
+    .balance__block
+        .baalance__block-title #{data.title}
+        .balance__block-cost #{data.value}
+            span.rub ₽
+
+mixin getMenu(menu, level)
+    - const currentLevel = level || 0
+    if (menu)
+        .menu(class=`level-${currentLevel}` style=`--currentLevel: ${currentLevel}`)
+            - for(let index = 0; index < menu.length; index++)
+                details.menu-item(class=!menu[index].submenu ? 'isEmpty' : '')
+                    summary.menu-item-title
+                        a #{menu[index].title}
+                    +getMenu(menu[index].submenu, currentLevel + 1)
+
+
+mixin header()
+    header
+        .header-top
+            .header-top__left-block
+                span.desktop-hide Ваш менеджер:
+                p.manager-name Молявина Виктория
+                a.telephone-link(href="tel:+78312621301") +7 831 262-13-01
+                a.telephone-link(href="tel:+79307002730") +7 (930) 700-27-30
+                a.mail-link(href="mailto:v.fedulova@s-stroy.ru") v.fedulova@s-stroy.ru
+            .header-top__right-block
+                a(href="") Доставка
+                a(href="") Контакты
+                a(href="") Завявка в тех. поддержку
+        .header-middle
+            label.show-header-menu(for="show-header-menu" onclick="toggleMenu(this)")
+            a(href="/")
+                picture.header-logo
+                    source(srcset="../img/svg/header-logo-desktop.svg" media="(min-width: 1024px)")
+                    img(src="../img/svg/header-logo-mobile.svg")
+            .header-search
+                form.search-form
+                    input(id="searchInput" type="text" action="#"  name="search" placeholder="Поиск стройматериалов" autocomplete="off"  pattern=".*\\S.*" required)
+                    button.search-form-button
+                    .search-wrapper
+                        ul.search-result__block
+                            li.search-result__item CS 25 Силиконовая затирка-герметик белый
+                            li.search-result__item CS 25 Силиконовая затирка-герметик прозрачный
+                            li.search-result__item CS 25 Силиконовая затирка- герметик Сахара
+                            li.search-result__item CS 25 Силиконовая затирка- герметик Темно-коричневый
+
+            a.header-cart(href="#")
+                .header-cart-count 6
+                .header-cart-sum Сумма 18 556
+                    span ₽
+            details.about-user-block.accordion
+                summary.user-information.accordion-title Нижегородский ремонтник
+                .user-information__items.accordion-content
+                    .user-information__items-title
+                        h6 ООО "Нижегородский ремонтник"
+                        p Татьяна Иванова
+                        .close-block.decktop-hidden(onclick="closeUserBlock(this)")
+                    .balance-blocks
+                        +balance-block({
+                            title: "Предоплата",
+                            value: "863.29",
+                            span: "₽"
+                        })
+                        +balance-block({
+                            title: "Кредитный лимит",
+                            value: "30 000.00"
+                        })
+                        +balance-block({
+                            title: "Общая задолженность",
+                            value: "0.00"
+                        })
+                        +balance-block({
+                        title: "Просроченная задолженность",
+                        value: "0.00"
+                        })
+                    +button({"class": "exit-button", "type": "submit", "text": "Выйти"})
+        .header-bottom
+            .catalog-menu
+                button(onclick="this.parentNode.classList.toggle('isOpen')")  Каталог товаров
+                +getMenu([
+                    {title: 'Внутренняя отделка'},
+                    {title: 'Водосточные системы'},
+                    {title: 'Герметики, клеи'},
+                    {title: 'Гидроизоляция'},
+                    {title: 'Защитные козырьки'},
+                    {title: 'Звукоизоляция'},
+                    {
+                        title: 'Крепёж',
+                        submenu: [
+                            {
+                                title: 'Анкера прочие'
+                            },
+                            {
+                                title: 'Дюбели для теплоизоляции',
+                                submenu: [
+                                    {
+                                        title: 'Tech-Krep',
+                                        submenu: [
+                                            {title: 'IZL-T со стльным гвоздем и термоголовой'},
+                                            {title: 'IZM со стальным гвоздем'},
+                                            {title: 'IZO с пластиковым гвоздем'}
+                                        ]
+                                    },
+                                    {
+                                        title: 'TERMOCLIP',
+                                        submenu: [
+                                            {title: 'TERMOCLIP 1'},
+                                            {title: 'TERMOCLIP 2'},
+                                        ]
+                                    },
+                                    {
+                                        title: 'ГАЛЕН'
+                                    }
+                                ]
+                            },
+                        ]
+                    },
+                    {title: 'Саморезы для металлочерепицы'},
+                    {title: 'Листовые материалы'},
+                    {title: 'Мансардные окна и лестницы'},
+                    {title: 'Мастики и праймеры'},
+                    {title: 'Огнебиозащита'},
+                    {title: 'Пены'},
+                    {title: 'Пленки'},
+                    {title: 'Плоская кровля'},
+                    {title: 'Ручной инструмент'},
+                    {title: 'Скатная кровля'},
+                    {title: 'Утеплители'},
+                    {title: 'Фасады'},
+                    {title: 'Фундаменты'}
+                ])
+            nav.header-menu
+                a.desktop-hide(href="#") Главная
+                a(href="#") Прайс-лист
+                a(href="#") Заказы
+                a(href="#") Расходные накладные
+                a(href="#") Документы к оплате
+                a(href="#") Акт сверки
+    script.
+        //TODO: do it on more power desktop
+        if (window.matchMedia("(max-width: 1023px)").matches) {
+            document.querySelector('.header-bottom').prepend(document.querySelector('.header-search'))
+            document.querySelector('.header-menu').append(document.querySelector('.header-top'))
+        }
