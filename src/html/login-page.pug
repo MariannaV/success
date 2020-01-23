@@ -31,11 +31,11 @@ html(lang="ru")
                         p Ещё нет корпоративного аккаунта?
                     form.registration-form
                         h3 Заявка на регистрацию
-                        +input({type: "text", placeholder: "ФИО", required: true} )
-                        +input({placeholder: "Телефон", required: true})
-                        +input({type: "email", placeholder: "Email", required: true})
-                        +input({type: "name", placeholder: "Компания", required: true})
-                        +input({placeholder: "ИНН", required: true})
+                        +input({type: "text", placeholder: "ФИО", required: true, classes: {container: 'required'},} )
+                        +input({placeholder: "Телефон", required: true, classes: {container: 'required'},})
+                        +input({type: "email", placeholder: "Email", required: true, classes: {container: 'required'},})
+                        +input({type: "name", placeholder: "Компания", required: true, classes: {container: 'required'},})
+                        +input({placeholder: "ИНН", required: true, classes: {container: 'required'},})
                         +select({
                             placeholder: "Город",
                             required: true,

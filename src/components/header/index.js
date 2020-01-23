@@ -9,7 +9,8 @@ const accordion = {
 
 
 if (window.matchMedia("(max-width: 1023px)").matches) {
-    window.toggleMenu = () => document.body.classList.toggle('isMenuShowing');
+    window.toggleMenu = () => document.body.classList.toggle('isShowingMenu');
+    window.toggleBlock = () => document.body.classList.toggle('isShowingBlock');
 
     const userBlock = document.querySelector('.about-user-block');
     window.closeUserBlock = () => {
@@ -20,7 +21,6 @@ if (window.matchMedia("(max-width: 1023px)").matches) {
 
 
 if (window.matchMedia("(min-width: 1024px)").matches) {
-    document.getElementById('searchInput').setAttribute('placeholder', 'Поиск строительных и отделочных материалов');
     accordion.init();
     accordion.init({selector: '.catalog-menu .menu-item:not(.isEmpty)', closeOnMouseLeave: false});
 
@@ -33,6 +33,10 @@ if (window.matchMedia("(min-width: 1024px)").matches) {
     }
 }
 
+
+if (window.matchMedia("(min-width: 1360px)").matches) {
+    document.getElementById('searchInput').setAttribute('placeholder', 'Поиск строительных и отделочных материалов');
+}
 
 const getScreenName = (screenWidth) => screenWidth >= 1024 ? 'desktop' : 'mobile';
 let lastScreen = getScreenName(window.innerWidth);

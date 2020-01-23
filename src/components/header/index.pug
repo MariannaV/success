@@ -2,9 +2,9 @@ include ../forms/button/index
 
 mixin balance-block(data)
     .balance__block
-        .baalance__block-title #{data.title}
+        .balance__block-title #{data.title}
         .balance__block-cost #{data.value}
-            span.rub ₽
+            span.rub
 
 mixin getMenu(menu, level)
     - const currentLevel = level || 0
@@ -37,7 +37,7 @@ mixin header()
                     source(srcset="../img/svg/header-logo-desktop.svg" media="(min-width: 1024px)")
                     img(src="../img/svg/header-logo-mobile.svg")
             .header-search
-                form.search-form
+                form.search-form(novalidate)
                     input(id="searchInput" type="text" action="#"  name="search" placeholder="Поиск стройматериалов" autocomplete="off"  pattern=".*\\S.*" required)
                     button.search-form-button
                     .search-wrapper
@@ -50,8 +50,8 @@ mixin header()
             a.header-cart(href="#")
                 .header-cart-count 6
                 .header-cart-sum Сумма 18 556
-                    span ₽
-            details.about-user-block.accordion
+                    span
+            details(onclick="toggleBlock(this)").about-user-block.accordion
                 summary.user-information.accordion-title Нижегородский ремонтник
                 .user-information__items.accordion-content
                     .user-information__items-title
@@ -61,8 +61,7 @@ mixin header()
                     .balance-blocks
                         +balance-block({
                             title: "Предоплата",
-                            value: "863.29",
-                            span: "₽"
+                            value: "863.29"
                         })
                         +balance-block({
                             title: "Кредитный лимит",
@@ -79,7 +78,7 @@ mixin header()
                     +button({"class": "exit-button", "type": "submit", "text": "Выйти"})
         .header-bottom
             .catalog-menu
-                button(onclick="this.parentNode.classList.toggle('isOpen')")  Каталог товаров
+                button(onclick="this.parentNode.classList.toggle('isOpen'), toggleBlock(this)")  Каталог товаров
                 +getMenu([
                     {title: 'Внутренняя отделка'},
                     {title: 'Водосточные системы'},

@@ -1,0 +1,262 @@
+include ../components/content/information-block/index
+include ../components/content/link/index
+include ../components/forms/filter/index
+include ../components/forms/input/index
+include ../components/forms/datepicker/index
+include ../components/forms/button/index
+include ../components/head/head
+include ../components/footer/index
+include ../components/header/index
+
+mixin title(data)
+    h2.page-title #{data.text}
+
+
+
+mixin table(data)
+    - lines = data.lines || []
+    - classes = data.classes || {}
+    table.m-table(class=classes.container)
+        thead
+            tr
+                - for(let columnIndex = 0, currentLine = lines[0]; columnIndex < currentLine.length; columnIndex++)
+                    th(class=currentLine[columnIndex].class) !{currentLine[columnIndex].children}
+        tbody
+            - for(let lineIndex = 1; lineIndex < lines.length; lineIndex++)
+                tr
+                    - for(let columnIndex = 0, currentLine = lines[lineIndex]; columnIndex < currentLine.length; columnIndex++)
+                        td(class=currentLine[columnIndex].class) !{currentLine[columnIndex].children}
+
+doctype html
+html(lang="ru")
+    +head({"title": "Моя корзина", "description": "Корзина"})
+        link(rel="stylesheet" href="styles/cart-page.css")
+        link(rel="stylesheet" href="libs/flatpickr/dist/flatpickr.min.css")
+    body.cart-page.content-pages
+        +header()
+        main
+            +title({text: "Моя корзина"})
+            .page-content__container
+                +table({
+                    lines: [
+                        [
+                            { children: "Наименование, артикул" },
+                            { children: "Наличие, шт."},
+                            { children: "Ваша цена" },
+                            { children: "Количество" },
+                            { children: "Сумма", class: 'a' }
+                        ],
+                        [
+                            {
+                                children: "Штора ARS для мансардного окна Fakro (78х140), тип 07, лен (006) <span class='article'>00945635</span>" , class: "title-td",
+                            },
+                            { children: "1468 (м) <span>457 (д)</span>", class: "amount-td" },
+                            { children: "2855.90 <span class='rub'></span>", class: "cost-td" },
+                            { children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="1"><button name="minus"></button><button name="plus"></button></div></div>', class: "counter-td"},
+                            { children: "5711.8 <span class='rub'></span>", class: "sum" },
+                            { children: "<div class=''> </div>", class:"image-td"}
+                        ],
+                        [{children: "ZCT 200K Стержень для открывания окон с регулируемой длиной (от 1,02 до 1,83 м), Velux<span class='article'>00945635</span>", class: "title-td"
+                        },
+                        {children: "1468 (м) <span>457 (д)</span>", class: "amount-td"},
+                        {children: "2855.90 <span class='rub'></span>", class: "cost-td"  },
+                        {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="1"><button name="minus"></button><button name="plus"></button></div></div>', class: "counter-td"},
+                        {children: "5711.8 <span class='rub'></span>", class: "sum"},
+                        {children: "<div> </div>", class:"image-td"},
+                            ],
+                        [{
+                            children: "Мансардное окно, GZR 3050, MR04 78х98, Velux ручка сверху <span class='article'>00945635</span>", class: "title-td"
+                        },
+                            {children: "1468 (м) <span>457 (д)</span>", class: "amount-td"},
+                            {children: "2855.90 <span class='rub'></span>", class: "cost-td" },
+                            {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="2"><button name="minus"></button><button name="plus"></button></div></div>', class: "counter-td"},
+                            {children: "5711.8 <span class='rub'></span>", class: "sum"},
+                            {children: "<div> </div>", class:"image-td"},
+                        ],
+                        [{
+                            children: "Штора ARS для мансардного окна Fakro (78х140), тип 07, лен (006) <span class='article'>00945635</span>", class: "title-td"
+                        },
+                            {children: "1468 (м) <span>457 (д)</span>", class: "amount-td"},
+                            {children: "2855.90 <span class='rub'></span>", class: "cost-td" },
+                            {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="3"><button name="minus"></button><button name="plus"></button></div></div>', class: "counter-td"},
+                            {children: "5711.8 <span class='rub'></span>", class: "sum"},
+                            {children: "<div> </div>",class: "image-td"},
+                        ], [{
+                            children: "Штора ARS для мансардного окна Fakro (78х140), тип 07, лен (006) <span class='article'>00945635</span>", class: "title-td"
+                        },
+                            {children: "1468 (м) <span>457 (д)</span>", class: "amount-td"},
+                            {children: "2855.90 <span class='rub'></span>", class: "cost-td" },
+                            {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="1"><button name="minus"></button><button name="plus"></button></div></div>', class: "counter-td"},
+                            {children: "5711.8 <span class='rub'></span>", class: "sum"},
+                            {children: "<div class='image-td'> </div>", class:"image-td"},
+                        ], [{
+                            children: "Штора ARS для мансардного окна Fakro (78х140), тип 07, лен (006) <span class='article'>00945635</span>", class: "title-td"
+                        },
+                            {children: "1468 (м) <span>457 (д)</span>" , class: "amount-td"},
+                            {children: "2855.90 <span class='rub'></span>", class: "cost-td" },
+                            {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="2"><button name="minus"></button><button name="plus"></button></div></div>', class: "counter-td"},
+                            {children: "57111.8 <span class='rub'></span>", class: "sum"},
+                            {children: "<div> </div>", class:"image-td"},
+                        ]
+                    ],
+
+
+                })
+                .table-footer
+                    h4 Итого
+                    p  28 775.83 ₽
+
+
+            +title({text: "Оформление заказа"})
+            form.form__wrapper.page-content__container
+                .fieldsets-container(data-delivery='self-delivery')
+                    .fieldset
+                        .fieldset-description
+                            .fieldset-title  Комментарий к заказу
+                        .fieldset-content
+                            textarea
+                    .fieldset
+                        .fieldset-description
+                            .fieldset-title  Способ доставки
+                        .fieldset-content
+                            input(type="radio" id="self-delivery" name="delivery" checked)
+                            label(class="radio-button" for="self-delivery" onclick='addMethodDelivery(this)' data-value='self-delivery') Самовывоз
+                            input(type="radio" id="delivery-to" name="delivery")
+                            label(class="radio-button" for="delivery-to" onclick='addMethodDelivery(this)' data-value='delivery-to') Доставка
+                    .fieldset.self-delivery
+                        .fieldset-description
+                            .fieldset-title Выберите склад
+                        .fieldset-content
+                                +filter({
+                                    flags: {asRadio: true},
+                                    labels: [
+                                        {type: "radio", value: "Moscow-highway", label: 'Склад Московское шоссе', name: "choice-self-delivery", class:"radio-button", checked: true},
+                                        {type: "radio", value: "Dryzhny", label: 'Склад Дружный', name: "choice-self-delivery", class:"radio-button"},
+                                    ],
+                                })
+                    .fieldset.delivery-to
+                        .fieldset-description
+                            .fieldset-title Адрес
+                        .fieldset-content
+                            +filter({
+                                flags: {asRadio: true},
+                                labels: [
+                                    {
+                                            type: "radio",
+                                            value: "Nizhny_Novgorod",
+                                            label: 'Россия, Нижний Новгород, проспект Гагарина, 121Б',
+                                            name: "address",
+                                            class:"radio-button",
+                                            checked: true
+                                        },
+                                    {
+                                            type: "radio",
+                                            value: "Bogorodsk",
+                                            label: 'Россия, Нижегородская область, Богородск, улица Минина, 24',
+                                            name: "address",
+                                            class:"radio-button"
+                                        },
+                                    ],
+                                })
+                    .fieldset.delivery-to.another-address
+                        .fieldset-description
+                            .fieldset-title Другой адрес
+                        .fieldset-content
+                            +input({name: 'enter-address', type: 'text'})
+                    .fieldset.delivery-to
+                        .fieldset-description
+                            .fieldset-title Дата доставки
+                        .fieldset-content
+                            +datePicker({name: 'date-start'})
+                            .select-time__block
+                                +input({type: "text", placeholder: "время с"} )
+                                +input({type: "text", placeholder: "время до"} )
+                    .fieldset.delivery-to.choose-transport
+                        .fieldset-description
+                            .fieldset-title Выберите необходимый тип транспорта
+                        .fieldset-content
+                                .titles_wrapper(onclick='labelHandlers.onClick(event)')
+                                    label(for="delivery-method-1" class="delivery-method-title radio-button active-label") Газель 1,5 т
+                                    label(for="delivery-method-2" class="delivery-method-title radio-button") ГАЗ/Валдай
+                                    label(for="delivery-method-3" class="delivery-method-title radio-button") 5-тонник
+                                    label(for="delivery-method-4" class="delivery-method-title radio-button") 10-тонник
+                                .m-description__block
+                                        .description__wrapper
+                                            input(type="radio" id="delivery-method-1" name="type-of-transport" class="method-delivery" checked)
+                                            label(for="delivery-method-1" class="description-label")
+                                                h6 Газель 1,5 т
+                                                .description
+                                                    p Грузоподъемность
+                                                    p 1,5 т
+                                                .description
+                                                    p Длина груза
+                                                    p 754 шт
+                                                .description
+                                                    p Объем
+                                                    p 500 кг
+                                                img(src="../img/content/delivery-car.png")
+
+                                        .description__wrapper
+                                            input(type="radio" id="delivery-method-2" name="type-of-transport" class="method-delivery")
+                                            label(for="delivery-method-2" class="description-label")
+                                                h6 ГАЗ/Валдай
+                                                .description
+                                                    p Грузоподъемность
+                                                    p 1,5 т
+                                                .description
+                                                    p Длина груза
+                                                    p 754 шт
+                                                .description
+                                                    p Объем
+                                                    p 500 кг
+                                                img(src="../img/content/delivery-car.png")
+
+                                        .description__wrapper
+                                            input(type="radio" id="delivery-method-3" name="type-of-transport" class="method-delivery")
+                                            label(for="delivery-method-3" class="description-label")
+                                                h6 5-тонник
+                                                .description
+                                                    p Грузоподъемность
+                                                    p 1,5 т
+                                                .description
+                                                    p Длина груза
+                                                    p 754 шт
+                                                .description
+                                                    p Объем
+                                                    p 500 кг
+                                                img(src="../img/content/delivery-car.png")
+
+                                        .description__wrapper
+                                        input(type="radio" id="delivery-method-4" name="type-of-transport" class="method-delivery")
+                                        label(for="delivery-method-4" class="description-label")
+                                            h6 10-тонник
+                                            .description
+                                                p Грузоподъемность
+                                                p 1,5 т
+                                            .description
+                                                p Длина груза
+                                                p 754 шт
+                                            .description
+                                                p Объем
+                                                p 500 кг
+                                            img(src="../img/content/delivery-car.png")
+
+                .shipping-container.delivery-to
+                    .shipping-list
+                        h6 Расстояние до пункта назначения
+                        p 45
+                            span км
+                    .shipping-list
+                        h6 Стоимость доставки
+                        p 4500
+                            span.rub
+                    #shipping-cart
+                        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d128661.36446546257!2d43.89972382676876!3d56.29193251770821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4151d5f9ee033251%3A0x28d3c0cf849657aa!2z0J3QuNC20L3QuNC5INCd0L7QstCz0L7RgNC-0LQsINCd0LjQttC10LPQvtGA0L7QtNGB0LrQsNGPINC-0LHQuy4sINCg0L7RgdGB0LjRjw!5e0!3m2!1sru!2sua!4v1579692819161!5m2!1sru!2sua" width="100%" height="340" frameborder="0" style="border:0;" allowfullscreen="")
+            .page-bottom
+                +button({type:"submit", class: "orange-button", text: "Оформить заказ"})
+                p Финальный расчет стоимости доставки производит менеджер после подтверждения заказа
+        +footer()
+        script(src="js/components/header/index.js" defer)
+        script(src="js/components/forms/input/index.js" defer)
+        script(src="libs/flatpickr/dist/flatpickr.js" defer)
+        script(src="js/components/cart-page/index.js" defer)

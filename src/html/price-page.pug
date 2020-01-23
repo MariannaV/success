@@ -1,5 +1,7 @@
 include ../components/head/head
 include ../components/forms/filter/index
+include ../components/footer/index
+include ../components/header/index
 
 mixin title(data)
     h2.page-title #{data.text}
@@ -12,7 +14,7 @@ html(lang="ru")
     +head({ "title": "Прайс-лист", "description": "Прайс-лист" })
         link(rel="stylesheet" href="styles/price-page.css")
     body.price-page.content-pages
-        header
+        +header()
         main
             +title({text: "Прайс-лист"})
             form.page-content__container
@@ -23,8 +25,8 @@ html(lang="ru")
                         +filter({
                             flags: {asCheckbox: true},
                             labels: [
-                                {value: "opt", label: '',text: "оптовые цены"},
-                                {value: "rozn", label: '', text: 'розничные цены'},
+                                {type: "checkbox", value: "opt", label: '',text: "оптовые цены"},
+                                {type: "checkbox", value: "rozn", label: '', text: 'розничные цены'},
                             ],
                         })
                 article.page-content__container-article
@@ -62,5 +64,6 @@ html(lang="ru")
                     +button({"class": "orange-button", "text": "Скачать прайс"})
                     +button({"class": "white-button", "type": "button", "text": "Выбрать все", "onclick" : "addAttributeChecked(this)"})
                     +button({"class": "white-button", "type": "reset", "text": "Очистить выбор"})
-        footer
+        +footer()
+        script(src="js/components/header/index.js" defer)
         script(src="js/components/price-page/index.js" defer)

@@ -2,6 +2,8 @@ include ../components/head/head
 include ../components/forms/datepicker/index
 include ../components/forms/select/index
 include ../components/forms/filter/index
+include ../components/footer/index
+include ../components/header/index
 
 mixin title(data)
     h2.page-title #{data.text}
@@ -17,7 +19,7 @@ html(lang="ru")
         link(rel="stylesheet" href="styles/act-page.css")
         link(rel="stylesheet" href="libs/flatpickr/dist/flatpickr.min.css")
     body.act-page.content-pages
-        header
+        +header()
         main
             +title({text: "Акт сверки"})
             form.get-act__form.page-content__container
@@ -69,7 +71,8 @@ html(lang="ru")
                     +datePicker({ name: 'date-start', title: 'Период от' })
                     +datePicker({ name: 'date-end', title: 'до' })
                 +button({"class": "orange-button", "text": "Скачать акт"})
-        footer
+        +footer()
+        script(src="js/components/header/index.js" defer)
         script(src="js/components/accordion/index.js" defer)
         script(src="libs/flatpickr/dist/flatpickr.js" defer)
         script(src="js/components/act-page/index.js" defer)

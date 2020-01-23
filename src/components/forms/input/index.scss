@@ -24,6 +24,16 @@
   &:not(:invalid) ~ .error {
     display: none;
   }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
 }
 
 
@@ -41,6 +51,13 @@
   transition: transform 0.3s;
   top: 51%;
 
+
+}
+
+
+/*REQUIRED FOR '*'   */
+
+.m-input__container.required .placeholder {
   &::after {
     content: '*';
     display: block;
