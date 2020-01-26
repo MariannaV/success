@@ -1,0 +1,118 @@
+include ../components/forms/button/index
+include ../components/head/head
+include ../components/forms/filter/index
+include ../components/forms/input/index
+include ../components/content/pagination/index
+include ../components/footer/index
+include ../components/header/index
+
+mixin title(data)
+    h2.page-title #{data.text}
+
+
+mixin table(data)
+    - lines = data.lines || []
+    - classes = data.classes || {}
+    table.m-table(class=classes.container)
+        thead
+            tr
+                - for(let columnIndex = 0, currentLine = lines[0]; columnIndex < currentLine.length; columnIndex++)
+                    th(class=currentLine[columnIndex].class) !{currentLine[columnIndex].children}
+        tbody
+            - for(let lineIndex = 1; lineIndex < lines.length; lineIndex++)
+                tr
+                    - for(let columnIndex = 0, currentLine = lines[lineIndex]; columnIndex < currentLine.length; columnIndex++)
+                        td(class=currentLine[columnIndex].class) !{currentLine[columnIndex].children}
+
+
+
+doctype html
+html(lang="ru")
+    +head({"title": "Дюбели для теплоизоляции", "description": "Список товаров"})
+        link(rel="stylesheet" href="styles/products-table-page.css")
+    body.products-table-page.content-pages
+        +header()
+        main
+            +title({text: "Дюбели для теплоизоляции"})
+            .page-content__container
+                .sort-block
+                    p Сортировка:
+                    +filter({
+                        flags: {asCheckbox: true},
+                        labels: [
+                            {type: "checkbox", value: "filter_checkbox", label: '', text: 'Только в наличии'},
+                        ],
+                    })
+                +table({
+                    lines: [
+                        [
+                            {children: "Наименование, артикул"},
+                            {children: "Наличие, шт."},
+                            {children: "Ваша цена"},
+                            {children: "Количество"},
+                            {children: "Сумма", class: 'a'},
+                            {children: ""},
+                        ],
+                        [
+                            {children: "Штора ARS для мансардного окна Fakro (78х140), тип 07, лен (006) <span class='article'>00945635</span>", class: "title-td",},
+                            {children: "1468 (м) <span>457 (д)</span>" , class: "amount-td"},
+                            {children: "2855.90<span class='rub'></span>", class: "cost-td"},
+                            {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="2"><button name="minus"></button><button name="plus"></button></div></div>'},
+                            {children: "5711.8<span class='rub'></span>", class: "sum"},
+                            {children: "<div class=''> </div>", class: "image-td"}
+                        ],
+                        [{
+                            children: "ZCT 200K Стержень для открывания окон с регулируемой длиной (от 1,02 до 1,83 м), Velux<span class='article'>00945635</span>",
+                            class: "title-td"
+                        },
+                            {children: "1468 (м) <span>457 (д)</span>", class: "amount-td"},
+                            {children: "2855.90<span class='rub'></span>", class: "cost-td"},
+                            {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="2"><button name="minus"></button><button name="plus"></button></div></div>'},
+                            {children: "5711.8<span class='rub'></span>", class: "sum"},
+                            {children: "<div> </div>", class: "image-td"},
+                        ],
+                        [{
+                            children: "Мансардное окно, GZR 3050, MR04 78х98, Velux ручка сверху <span class='article'>00945635</span>",
+                            class: "title-td"
+                        },
+                            {children: "1468 (м) <span>457 (д)</span>", class: "amount-td"},
+                            {children: "2855.90<span class='rub'></span>", class: "cost-td"},
+                            {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="1"><button name="minus"></button><button name="plus"></button></div></div>'},
+                            {children: "5711.8<span class='rub'></span>", class: "sum"},
+                            {children: "<div> </div>", class: "image-td"},
+                        ],
+                        [{
+                            children: "Штора ARS для мансардного окна Fakro (78х140), тип 07, лен (006) <span class='article'>00945635</span>",
+                            class: "title-td"
+                        },
+                            {children: "1468 (м) <span>457 (д)</span>", class: "amount-td"},
+                            {children: "2855.90<span class='rub'></span>", class: "cost-td"},
+                            {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="1"><button name="minus"></button><button name="plus"></button></div></div>'},
+                            {children: "5711.8<span class='rub'></span>", class: "sum"},
+                            {children: "<div> </div>", class: "image-td"},
+                        ], [{
+                            children: "Штора ARS для мансардного окна Fakro (78х140), тип 07, лен (006) <span class='article'>00945635</span>",
+                            class: "title-td"
+                        },
+                            {children: "1468 (м) <span>457 (д)</span>", class: "amount-td"},
+                            {children: "2855.90<span class='rub'></span>", class: "cost-td"},
+                            {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="3"><button name="minus"></button><button name="plus"></button></div></div>'},
+                            {children: "5711.8<span class='rub'></span>", class: "sum"},
+                            {children: "<div class=''> </div>", class: "image-td"},
+                        ], [{
+                            children: "Штора ARS для мансардного окна Fakro (78х140), тип 07, лен (006) <span class='article'>00945635</span>",
+                            class: "title-td"
+                        },
+                            {children: "1468 (м) <span>457 (д)</span>", class: "amount-td"},
+                            {children: "2855.90<span class='rub'></span>", class: "cost-td"},
+                            {children: '<div class="m-input__container m-counter"> <div class="m-input__wrapper"><input type="number" placeholder="empty" min="1" value="1"><button name="minus"></button><button name="plus"></button></div></div>'},
+                            {children: "5711.8<span class='rub'></span>", class: "sum"},
+                            {children: "<div> </div>", class: "image-td"},
+                        ]
+                    ],
+                })
+                +pagination()
+        +footer()
+    script(src="js/components/header/index.js" defer)
+    script(src="js/components/forms/input/index.js" defer)
+    script(src="js/components/pagination/content/index.js" defer)

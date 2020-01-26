@@ -6,3 +6,4 @@
 * [Карточка товара](https://my-success.netlify.com/product-page.html)
 * [Корзина](https://my-success.netlify.com/cart-page.html)
 * [Мои заказы](https://my-success.netlify.com/orders-page.html)
+* [Товары из категории](https://my-success.netlify.com/products-table-page.html)
