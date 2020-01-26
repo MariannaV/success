@@ -1,0 +1,167 @@
+include ../components/head/head
+include ../components/header/index
+include ../components/footer/index
+include ../components/content/link/index
+include ../components/content/pagination/index
+include ../components/forms/filter/index
+include ../components/forms/input/index
+include ../components/forms/datepicker/index
+include ../components/forms/select/index
+include ../components/forms/button/index
+
+mixin title(data)
+    h2.page-title #{data.text}
+
+mixin table(data)
+    - lines = data.lines || []
+    - classes = data.classes || {}
+    table.m-table(class=classes.container)
+        thead
+            tr
+                - for(let columnIndex = 0, currentLine = lines[0]; columnIndex < currentLine.length; columnIndex++)
+                    th(class=currentLine[columnIndex].class) !{currentLine[columnIndex].children}
+        tbody
+                - for(let lineIndex = 1; lineIndex < lines.length; lineIndex++)
+                    tr
+                        - for(let columnIndex = 0, currentLine = lines[lineIndex]; columnIndex < currentLine.length; columnIndex++)
+                            td(class=currentLine[columnIndex].class) !{currentLine[columnIndex].children}
+
+doctype html
+html(lang="ru")
+    +head({"title": "Мои заказы", "description": "Страница заказов"})
+        link(rel="stylesheet" href="styles/orders-page.css")
+        link(rel="stylesheet" href="libs/flatpickr/dist/flatpickr.min.css")
+    body.orders-page.content-pages
+        +header()
+        main
+            +title({text: "Мои заказы"})
+            .page-content__container
+                .sort-wrapper
+                    .date__container
+                        +datePicker({name: 'date-start', title: 'Выберите период: от'})
+                        +datePicker({name: 'date-end', title: 'до'})
+                    .order-status__block
+                        p Статус заказа
+                        +select({
+                            required: true,
+                            options: [
+                                {value: 1, label: 'Все', selected: true},
+                                {value: 2, label: 'Подтвержден'},
+                                {value: 3, label: 'Не подтвержден'},
+                                {value: 4, label: 'Отгружен'}
+                            ]
+                        })
+                +table({
+                        classes: {container: 'table-with-scroll'},
+                        lines: [
+                            [
+                                {children: "Заказ №"},
+                                {children: "Расх. накл. №", class: 'a'},
+                                {children: "Дата"},
+
+                                {children: "Сумма"},
+                                {children: "Статус"},
+                                {children: "Сообщения"}
+                            ],
+                            [
+                                {
+                                    children: "14УП-032644",
+                                },
+                                {children: "14УП-029090 "},
+                                {children: "06.11.2019"},
+                                {children: "2855.90<span class='rub'></span>", class: "sum"},
+                                {children: "<div class='order-status'> Не подтвержден </div>"},
+                                {children: "<div onclick='showChat(this)' class='order-chat new-notification'>  </div>"},
+                                {children: "<details class='accordion order-details'><summary class='order-details-title'></summary><div class='order-details-block accordion-content'><a class='download-link'>Скачать PDF</a><a class='repeat-link'>Повторить заказ</a><a class='cancel-link'>Отменить заказ</a></details>"}
+                            ],
+                            [{
+                                children: "14УП-032644",
+                            },
+                                {children: "14УП-029090 "},
+                                {children: "06.11.2019"},
+                                {children: "2855.90<span class='rub'></span>", class: "sum"},
+                                 {children: "<div class='order-status'>Подтвержден</div>"},
+                                {children: "<div onclick='showChat(this)' class='order-chat new-notification'> </div>"},
+                                {children: "<details class='accordion order-details'><summary class='order-details-title'></summary><div class='order-details-block accordion-content'><a class='download-link'>Скачать PDF</a><a class='repeat-link'>Повторить заказ</a><a class='cancel-link'>Отменить заказ</a></details>"}
+
+                            ],
+                            [{
+                                children: "14УП-032644",
+                            },
+                                {children: "14УП-029090 "},
+                                {children: "06.11.2019"},
+                                {children: "2855.90<span class='rub'></span>", class: "sum"},
+                                {children: "<div class='order-status'>Отгружен</div>"},
+                                {children: "<div onclick='showChat(this)'  class='order-chat new-notification'> </div>"},
+                                {children: "<details class='accordion order-details'><summary class='order-details-title'></summary><div class='order-details-block accordion-content'><a class='download-link'>Скачать PDF</a><a class='repeat-link'>Повторить заказ</a><a class='cancel-link'>Отменить заказ</a></details>"}
+                            ],
+                            [{
+                                children: "14УП-032644",
+                            },
+                                {children: "14УП-029090 "},
+                                {children: "06.11.2019"},
+                                {children: "2855.90<span class='rub'></span>", class: "sum"},
+                               {children: "<div class='order-status'>Не подтвержден</div>"},
+                                {children:"<div onclick='showChat(this)' class='order-chat'> </div>"},
+                                {children: "<details class='accordion order-details'><summary class='order-details-title'></summary><div class='order-details-block accordion-content'><a class='download-link'>Скачать PDF</a><a class='repeat-link'>Повторить заказ</a><a class='cancel-link'>Отменить заказ</a></details>"}
+                            ], [{
+                                children: "14УП-032644",
+                            },
+                                {children: "14УП-029090 "},
+                                {children: "06.11.2019"},
+                                {children: "2855.90<span class='rub'></span>", class: "sum"},
+                                {children: "<div class='order-status'>Отгружен</div>"},
+                                {children: "<div onclick='showChat(this)' class='order-chat'> </div>"},
+                                {children: "<details class='accordion order-details'><summary class='order-details-title'></summary><div class='order-details-block accordion-content'><a class='download-link'>Скачать PDF</a><a class='repeat-link'>Повторить заказ</a><a class='cancel-link'>Отменить заказ</a></details>"}
+                            ], [{
+                                children: "14УП-032644",
+                            },
+                                {children: "14УП-029090 "},
+                                {children: "06.11.2019"},
+                                {children: "2855.90<span class='rub'></span>", class: "sum"},
+
+                                {children: "<div class='order-status'>Подтвержден</div>"},
+                                {children: "<div onclick='showChat(this)'  class='order-chat new-notification'> </div>" },
+                                {children: "<details class='accordion order-details'><summary class='order-details-title'></summary><div class='order-details-block accordion-content'><a class='download-link'>Скачать PDF</a><a class='repeat-link'>Повторить заказ</a><a class='cancel-link'>Отменить заказ</a></details>"}
+                            ]
+                        ],
+                    })
+                .chat-section
+                    button(onclick="closeChat(this)").close-chat
+                    h4 Заказ № 14УП-032644
+                    span.chat-date-block 13 сентября 2019
+                    .chat-block
+                        .chat-message.right-block
+                            .chat-user-name Татьяна Иванова
+                                span.chat-time-block 12:38
+                            p  Просьба поставить в резерв, самовывоз клиента в понед с МШ. без цен.
+                        .chat-message.left-block
+                            .chat-user-name Молявина Виктория
+                                span.chat-time-block 13:07
+                            p  Татьяна, добрый день. Принято, в резерве, ждем вам вас в понедельник
+                        .chat-message.left-block
+                            .chat-user-name Молявина Виктория
+                                span.chat-time-block 13:07
+                            p  Татьяна, добрый день. Принято, в резерве, ждем вам вас в понедельник
+                        .chat-message.left-block
+                            .chat-user-name Молявина Виктория
+                                span.chat-time-block 13:07
+                            p  Татьяна, добрый день. Принято, в резерве, ждем вам вас в понедельник
+                        .chat-message.left-block
+                            .chat-user-name Молявина Виктория
+                                span.chat-time-block 13:07
+                            p  Татьяна, добрый день. Принято, в резерве, ждем вам вас в понедельник
+                        .chat-message.left-block
+                            .chat-user-name Молявина Виктория
+                                span.chat-time-block 13:07
+                            p  Татьяна, добрый день. Принято, в резерве, ждем вам вас в понедельник
+                    form.chat-form
+                        textarea(name='message' placeholder="Введите сообщение")
+                        +button({"class": "chat-button", "type": "submit"})
+                +pagination()
+        +footer()
+        script(src="js/components/header/index.js" defer)
+        script(src="js/components/accordion/index.js" defer)
+        script(src="js/components/content/pagination/index.js" defer)
+        script(src="libs/flatpickr/dist/flatpickr.js" defer)
+        script(src="js/components/orders-page/index.js" defer)

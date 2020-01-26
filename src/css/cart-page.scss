@@ -51,7 +51,7 @@
 
 
   .m-table {
-    width: 100%;
+/*    width: 100%;*/
 
     & > thead {
       @media(--max-tablet) {
@@ -274,11 +274,12 @@
         background-image: url("../img/svg/close-icon-gray.svg");
         background-repeat: no-repeat;
         background-position: center;
+        border-radius: 50%;
         @media(--min-tablet) {
           &:hover {
             background-image: url("../img/svg/close-icon-white.svg");
             background-color: $colorOrange;
-            border-radius: 50%;
+
 
           }
         }
