@@ -570,79 +570,78 @@ details > summary::-webkit-details-marker {
     }
 
 
-  }
-
-  li > a, li::before, li::after, .prev-page-button > a, .next-page-button > a {
-    border-radius: 2px;
-    border: 1px solid $colorLightGray;
-    padding: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-}
-
-@media(--max-tablet) {
-  ul {
-    justify-content: center;
-  }
-}
-
-@media(--big-desktop) {
-
-  .pagination li,
-  li.prev-page::before,
-  .pagination .active + li::after {
-    display: none;
-  }
-
-  .pagination li:first-child,
-  .pagination li:last-child,
-  .pagination li.prev-page,
-  .pagination li.active,
-  .pagination li.active + li {
-    display: contents;
-  }
-  .prev-page::before,
-  .active + li::after {
-    content: "...";
-  }
-  .pagination li.active + li,
-  .pagination .prev-page {
-    display: contents;
-  }
-
-  .pagination li:nth-child(n + 2) ~ .prev-page::before,
-  .pagination li:nth-last-child(n + 3)::after {
-    display: flex;
-  }
-  .prev-page-button, .next-page-button {
-
-    display: none;
+    li > a, li::before, li::after, .prev-page-button > a, .next-page-button > a {
+      border-radius: 2px;
+      border: 1px solid $colorLightGray;
+      padding: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
   }
-}
 
-@media(--min-big-desktop) {
-
-
-  ul li {
-    display: contents;
-  }
-  li:nth-last-child(2):not(.active), li:nth-last-child(2):not(.next-page) {
-    &::after {
-      content: "...";
+  @media(--max-tablet) {
+    ul {
+      justify-content: center;
     }
   }
 
-  li:first-of-type + li:not(.prev-page), li:first-of-type + li:not(.active) {
-    &::before {
+  @media(--big-desktop) {
+
+    .pagination li,
+    li.prev-page::before,
+    .pagination .active + li::after {
+      display: none;
+    }
+
+    .pagination li:first-child,
+    .pagination li:last-child,
+    .pagination li.prev-page,
+    .pagination li.active,
+    .pagination li.active + li {
+      display: contents;
+    }
+    .prev-page::before,
+    .active + li::after {
       content: "...";
+    }
+    .pagination li.active + li,
+    .pagination .prev-page {
+      display: contents;
+    }
+
+    .pagination li:nth-child(n + 2) ~ .prev-page::before,
+    .pagination li:nth-last-child(n + 3)::after {
+      display: flex;
+    }
+    .prev-page-button, .next-page-button {
+
+      display: none;
 
     }
   }
 
+  @media(--min-big-desktop) {
+
+
+    ul li {
+      display: contents;
+    }
+    li:nth-last-child(2):not(.active), li:nth-last-child(2):not(.next-page) {
+      &::after {
+        content: "...";
+      }
+    }
+
+    li:first-of-type + li:not(.prev-page), li:first-of-type + li:not(.active) {
+      &::before {
+        content: "...";
+
+      }
+    }
+
+  }
 }
 
 /*---END PAGINATION---*/
