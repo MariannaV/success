@@ -526,7 +526,7 @@ details > summary::-webkit-details-marker {
   display: flex;
   margin-top: 16px;
 
-  & > a {
+  li a {
     color: $colorBlue2;
     padding: 8px 11px;
     border: 1px solid $colorLightGray;
@@ -543,9 +543,9 @@ details > summary::-webkit-details-marker {
       border-color: $colorBlue;
     }
 
-    & + a {
-      margin-left: 8px;
-    }
+    /*  & + a {
+        margin-left: 8px;
+      }*/
   }
 }
 
@@ -553,10 +553,6 @@ details > summary::-webkit-details-marker {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
   grid-gap: 8px;
-
-  @media (--max-tablet) {
-    justify-content: center;
-  }
 
   ul {
     display: contents;
@@ -569,65 +565,65 @@ details > summary::-webkit-details-marker {
       border: 1px solid $colorBlue;
     }
 
-
-    li > a, li::before, li::after, .prev-page-button > a, .next-page-button > a {
-      border-radius: 2px;
-      border: 1px solid $colorLightGray;
-      padding: 8px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
   }
 
-  @media(--max-tablet) {
+  li > a, li::before, li::after, .prev-page-button > a, .next-page-button > a {
+    border-radius: 2px;
+    border: 1px solid $colorLightGray;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (--max-tablet) {
+    justify-content: center;
     ul {
       justify-content: center;
     }
   }
-
   @media(--big-desktop) {
-
-    .pagination li,
-    li.prev-page::before,
-    .pagination .active + li::after {
+    li, li.prev-page::before,
+    .active + li::after {
       display: none;
     }
 
-    .pagination li:first-child,
-    .pagination li:last-child,
-    .pagination li.prev-page,
-    .pagination li.active,
-    .pagination li.active + li {
+    li:first-child,
+    li:last-child,
+    li.prev-page,
+    li.active,
+    li.active + li {
       display: contents;
     }
+
     .prev-page::before,
     .active + li::after {
       content: "...";
     }
-    .pagination li.active + li,
-    .pagination .prev-page {
+
+    li.active + li,
+    .prev-page {
       display: contents;
     }
 
-    .pagination li:nth-child(n + 2) ~ .prev-page::before,
-    .pagination li:nth-last-child(n + 3)::after {
+    li:nth-child(n + 2) ~ .prev-page::before,
+    li:nth-last-child(n + 3)::after {
       display: flex;
     }
+
     .prev-page-button, .next-page-button {
 
       display: none;
 
     }
   }
-
   @media(--min-big-desktop) {
 
 
     ul li {
       display: contents;
     }
+
     li:nth-last-child(2):not(.active), li:nth-last-child(2):not(.next-page) {
       &::after {
         content: "...";
@@ -640,8 +636,8 @@ details > summary::-webkit-details-marker {
 
       }
     }
-
   }
 }
+
 
 /*---END PAGINATION---*/
