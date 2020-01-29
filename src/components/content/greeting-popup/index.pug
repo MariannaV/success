@@ -1,0 +1,13 @@
+mixin greeting-popup(data)
+    .popup__wrapper.greeting-popup
+        .close-popup(onclick ='greetingPopup.hide()')
+        .popup-block.zoomIn
+            +information-block({class: "about-portal"})
+                h3 Приветствие для новых клиентов
+                .popup-description
+                    p Вы можете обратиться за консультацией или отправить запрос через онлайн-консультант, форму обратной связи или по телефону.
+                    +link({
+                        class: 'with-video',
+                        'data-text': 'Посмотреть о возможностях портала'
+                    }) Посмотреть о возможностях портала
+                img(src="../img/content/call.png")

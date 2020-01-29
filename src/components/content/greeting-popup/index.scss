@@ -1,0 +1,160 @@
+
+.popup__wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: $colorBlue2Opacity;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  align-items: center;
+  justify-content: center;
+
+  &:not(.active){
+  display: none;
+  }
+}
+
+.close-popup {
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/svg/close-icon-gray.svg");
+  position: absolute;
+
+  border-radius: 50%;
+  background-color: $colorLightGray;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  @media(--max-tablet){
+    right: 24px;
+    top: 24px;
+  }
+  @media(--min-tablet) {
+    right: 40px;
+    top: 26px;
+  }
+}
+.popup-block{
+  box-shadow: 0 3px 8px hsla(210, 100%, 24%, 0.05);
+  background-color: $colorBlueLight2;
+  font-weight: $FontRegular;
+max-height: 80vh;
+  @media(--max-tablet){
+    margin: 0 $margin-1;
+    max-width: 600px;
+  }
+  @media(--min-tablet){
+
+    max-width: 672px;
+  }
+}
+.greeting-popup {
+  .popup-block {
+
+    .about-portal {
+      height: 100%;
+      color: hsl(223, 30%, 30%);
+      background-color: transparent;
+      align-items: flex-start;
+      position: relative;
+      @media(--min-tablet) {
+        padding: 41px 47px 47px 47px;
+      }
+
+      & > h3 {
+        @media(--min-tablet) {
+          width: 50%;
+        }
+      }
+
+      & > img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @media(max-width: 469px) {
+          display: none;
+        }
+        @media(min-width: 470px) and (--max-tablet) {
+          width: 24%;
+        }
+      }
+    }
+
+
+  }
+  .popup-description {
+    @media(--min-tablet) {
+      width: 55%;
+    }
+
+    & > p {
+      color: $colorBlue2;
+      font-size: $size-14;
+      line-height: 24px;
+      @media(min-width: 470px) and (--max-tablet) {
+        max-width: 80%;
+      }
+      & + a {
+        margin-top: 28px;
+      }
+    }
+
+    & > a {
+      margin-top: 0;
+      font-size: $size-13;
+      color: $colorBlue;
+      background-image: url("../img/svg/play-icon-blue.svg");
+      background-repeat: no-repeat;
+      line-height: 24px;
+      background-size: 22px;
+
+      &::after {
+        text-decoration-color: $colorBlue4Opacity;
+        font-size: $size-13;
+
+
+      }
+    }
+
+
+  }
+
+
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+}
+
+.zoomIn, .zoomOut {
+  animation-duration: calc(var(--animationDuration) * 1s / 1000);
+  animation-fill-mode: forwards;
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+  --animationDuration: 500;
+}
+
+.zoomOut {
+  animation-name: zoomOut;
+  --animationDuration: 250;
+}

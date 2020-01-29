@@ -11,17 +11,17 @@
   color: $colorBlue2;
   font-weight: $FontRegular;
 
-.page-title{
-  @media(--max-tablet){
-    padding: $margin-1;
+  .page-title {
+    @media(--max-tablet) {
+      padding: $margin-1;
+    }
   }
-}
 
   .page-content__container {
     padding: 20px;
 
     & + .page-title {
-      @media(--max-tablet){
+      @media(--max-tablet) {
         margin-top: 24px;
       }
       margin-top: 40px;
@@ -47,12 +47,7 @@
   }
 
 
-
-
-
   .m-table {
-/*    width: 100%;*/
-
     & > thead {
       @media(--max-tablet) {
 
@@ -116,7 +111,8 @@
 
 
         }
-        &>.rub{
+
+        & > .rub {
           display: inline-block;
           min-width: 7.5px;
           min-height: 15px;
@@ -311,6 +307,15 @@
     }
   }
 
+  .asRadio {
+    .m-filter__container {
+      input {
+        display: none;
+
+      }
+    }
+  }
+
   .page-bottom {
     @media(--max-tablet) {
       padding: 0 $margin-1;
@@ -337,7 +342,9 @@
       }
     }
   }
+
 }
+
 .fieldset {
   display: flex;
   @media(--max-tablet) {
@@ -389,7 +396,7 @@
     @media(--min-tablet) {
       width: 66%;
     }
-   /* @media(min-width)*/
+    /* @media(min-width)*/
 
     .m-filter__container {
       & + .m-filter__container {
@@ -449,21 +456,22 @@
     margin-top: 12px;
     display: flex;
     align-items: baseline;
-justify-content: flex-start;
+    justify-content: flex-start;
     @media(max-width: 374px) {
       flex-direction: column;
     }
     @media(--min-big-desktop) {
       justify-content: space-between;
     }
-.m-input__container{
-  &+ .m-input__container{
-    @media(min-width: 375px) and (max-width: 1359px) {
-    margin-left: 10px;
-    }
-  }
 
-}
+    .m-input__container {
+      & + .m-input__container {
+        @media(min-width: 375px) and (max-width: 1359px) {
+          margin-left: 10px;
+        }
+      }
+
+    }
 
     input {
       width: 226px;
@@ -475,13 +483,14 @@ justify-content: flex-start;
       @media(min-width: 768px) and (max-width: 899px) {
         width: 150px;
       }
-      @media(min-width: 1024px) and (max-width: 1261px){
+      @media(min-width: 1024px) and (max-width: 1261px) {
         width: 150px;
       }
     }
   }
 
 }
+
 .choose-transport {
   align-items: baseline;
   @media(min-width: 1024px) and (max-width: 1225px) {
@@ -519,7 +528,6 @@ justify-content: flex-start;
 
 
 }
-
 
 
 #self-delivery, #delivery-to {
@@ -610,17 +618,6 @@ input.method-delivery {
     display: block;
   }
 }
-
-.asRadio {
-  .m-filter__container {
-    input {
-      display: none;
-
-    }
-  }
-}
-
-
 
 
 /*---CART BLOCK---*/

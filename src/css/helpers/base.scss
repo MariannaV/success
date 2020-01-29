@@ -435,14 +435,8 @@ details > summary::-webkit-details-marker {
   display: flex;
   @media(max-width: 374px) {
     flex-direction: column;
-    margin-bottom: 20px;
   }
-  @media(min-width: 375px) {
-    flex-wrap: wrap;
-    @media(max-width: 1359px) {
-      margin-bottom: 36px;
-    }
-  }
+
 
 }
 

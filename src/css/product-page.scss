@@ -5,22 +5,6 @@
 @import 'helpers/mixins.scss';
 @import '../components/header/index.scss';
 
-.product-page {
-
-  main {
-
-    h2, .product-cart {
-      @media(--max-tablet) {
-        margin: $margin-1;
-      }
-      @media(--tablet) {
-        margin: 24px 0;
-
-      }
-    }
-  }
-}
-
 
 .product-page {
 
@@ -34,111 +18,118 @@
       row-gap: 24px;
     }
     @media(--desktop) {
-      /* grid-template-columns: 39.064vw 23.926vw;*/
       grid-template-columns: 41.064vw 21.926vw;
       column-gap: 20px;
     }
     @media(--min-big-desktop) {
-      /* grid-template-columns: 2.1fr 1fr;*/
       grid-template-columns: 560px 260px;
-      /*grid-gap: 40px;*/
       column-gap: 40px;
 
     }
 
-    }
-    .page-title, .product-description {
-      grid-column: span 2;
-    }
+    h2, .product-cart {
+      @media(--max-tablet) {
+        margin: $margin-1;
+      }
+      @media(--tablet) {
+        margin: 24px 0;
 
-    .product-description {
-      /*  padding: $margin-1;*/
-      font-family: "Open Sans";
-      font-weight: $FontRegular;
-      font-size: $size-14;
-      color: $colorBlue2;
-      line-height: 24px;
-    }
-
-    .counter-container {
-      margin: 12px auto;
+      }
     }
   }
 
+  .page-title, .product-description {
+    grid-column: span 2;
+  }
 
-  .product-preview {
-    padding: 24px 24px 39px 24px;
+  .product-description {
+    font-family: "Open Sans";
+    font-weight: $FontRegular;
+    font-size: $size-14;
+    color: $colorBlue2;
+    line-height: 24px;
+  }
 
-    @media(min-width: 600px) and (max-width: 767px) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 15px;
+  .counter-container {
+    margin: 12px auto;
+  }
+}
+
+
+/*START PRODUCT PREWIEW AND COUNTER*/
+.product-preview {
+  padding: 24px 24px 39px 24px;
+
+  @media(min-width: 600px) and (max-width: 767px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px;
+  }
+  @media(--max-tablet) {
+    & + .product-cart {
+      margin-top: 48px;
     }
-    @media(--max-tablet) {
-      & + .product-cart {
-        margin-top: 48px;
-      }
-    }
+  }
+  @media(--min-tablet) {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr;*/
+    grid-template-columns: 276px 1fr;
+    grid-column-gap: 38px;
+  }
+  @media(--desktop) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    padding: 15px;
+  }
+}
+
+.product-preview__description {
+  article {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 5px 0;
+    font-family: "Open Sans";
+    font-weight: $FontRegular;
+    font-size: $size-13;
+    line-height: 24px;
+    color: $colorBlue2;
     @media(--min-tablet) {
-      display: grid;
-      /* grid-template-columns: 1fr 1fr;*/
-      grid-template-columns: 276px 1fr;
-      grid-column-gap: 38px;
+      padding-top: 12px;
+      line-height: 25px;
     }
-    @media(--desktop) {
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 20px;
-      padding: 15px;
-    }
-  }
 
-  .product-preview__description {
-    article {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      grid-gap: 5px 0;
-      font-family: "Open Sans";
-      font-weight: $FontRegular;
-      font-size: $size-13;
-      line-height: 24px;
-      color: $colorBlue2;
+    & > h6 {
+      margin-bottom: 7px;
+      grid-column: span 2;
+      font-weight: $FontBold;
       @media(--min-tablet) {
-        padding-top: 12px;
-        line-height: 25px;
+        margin-top: 25px;
+        line-height: 18px;
+      }
+    }
+
+    & > span {
+      border-bottom: 1px solid $colorBlueLight2;
+
+
+      &:nth-child(2n+1) {
+        padding-right: 5px;
       }
 
-      & > h6 {
-        margin-bottom: 7px;
-        grid-column: span 2;
-        font-weight: $FontBold;
-        @media(--min-tablet) {
-          margin-top: 25px;
-          line-height: 18px;
-        }
+      &:nth-of-type(2n+2) {
+        text-align: right;
       }
+    }
 
-      & > span {
-        border-bottom: 1px solid $colorBlueLight2;
-
-
-        &:nth-child(2n+1) {
-          padding-right: 5px;
-        }
-
-        &:nth-of-type(2n+2) {
-          text-align: right;
-        }
-      }
-
-      & + article {
-        margin-top: 18px;
-        @media(--min-tablet) {
-          margin-top: 7px;
-        }
+    & + article {
+      margin-top: 18px;
+      @media(--min-tablet) {
+        margin-top: 7px;
       }
     }
   }
+}
 
 
 .product-preview, .product-cart, .product-description__content {
@@ -187,7 +178,7 @@
     display: grid;
     column-gap: 40px;
     grid-template: "price count" "sum button";
-      grid-template-columns: max-content max-content;
+    grid-template-columns: max-content max-content;
     justify-content: space-between;
     padding: 20px 40px;
   }
@@ -206,10 +197,12 @@
     @media(--min-tablet) {
       padding: 4px;
     }
-& > span > span{
-  margin-left: 4px;
-  font-weight: $FontRegular;
-}
+
+    & > span > span {
+      margin-left: 4px;
+      font-weight: $FontRegular;
+    }
+
     & + .product-cart-sum {
       margin-top: 33px;
       @media(--min-tablet) {
@@ -269,16 +262,18 @@
   @media(--min-tablet) and (--max-desktop) {
     min-width: 270px;
   }
-  .counter-minus{
+
+  .counter-minus {
     background-image: url("../img/svg/minus-icon.svg");
   }
 
-  .counter-plus{
+  .counter-plus {
     background-image: url("../img/svg/plus-icon.svg");
   }
+
   .counter-minus, .counter-plus {
     width: calc((100% - 106px) / 2);
-      border: none;
+    border: none;
     background-size: 10px;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -293,18 +288,17 @@
     padding: 15px 0;
     border-left: 1px solid $colorLightGray;
     border-right: 1px solid $colorLightGray;
-    &>span{
+
+    & > span {
       margin-left: 4px;
     }
   }
 
-  .counter-plus {
-  }
 
 
 }
-
-
+/*END PRODUCT PREWIEW AND COUNTER*/
+/*START PRODUCT DESCRIPRION*/
 .product-description__navigation {
   padding: 13px 24px 0 24px;
 
@@ -364,7 +358,7 @@
   }
 }
 
-.product-description__navigation-block{
+.product-description__navigation-block {
   font-weight: $FontDemi;
 }
 
@@ -417,3 +411,5 @@ input[name="tabs"]:not(:checked) + .product-description__content-block {
 
   }
 }
+
+/*END PRODUCT DESCRIPRION*/

@@ -39,8 +39,8 @@
   }
 }
 
+/*START ARTICLES CONTAINER*/
 .page-content__container-article {
-
   & > header {
     h5 {
       color: $colorBlue2;
@@ -59,9 +59,6 @@
         line-height: 28px;
       }
     }
-  }
-
-  & > header {
     h6 {
       color: $colorBlue2;
       font-family: 'Montserrat', sans-serif;
@@ -82,7 +79,6 @@
     }
   }
 
-
   & + & {
     margin-top: 15px;
   }
@@ -92,9 +88,9 @@
   }
 }
 
+/*END ARTICLES CONTAINER*/
 
-
-
+/*START BUTTONS CONTAINER*/
 .page-content__container-buttons {
 
   display: flex;
@@ -107,3 +103,5 @@
     justify-content: space-between;
   }
 }
+
+/*END BUTTONS CONTAINER*/

@@ -5,6 +5,7 @@
 @import 'helpers/mixins.scss';
 @import '../components/header/index.scss';
 @import '../components/content/link/index.scss';
+@import '../components/content/greeting-popup/index.scss';
 @import '../components/content/information-block/index.scss';
 
 
@@ -36,7 +37,6 @@
 
 
     & > main {
-     /* width: 55.883vw;*/
       @media(--min-desktop) {
       width: 61.765vw;
 
@@ -98,10 +98,6 @@
     }
   }
 
-  /* @media(--min-desktop){
-     max-width: 61.8vw;
-     margin-right: 14.85vw;
-   }*/
 }
 
 .main-page-content__container {
@@ -363,7 +359,6 @@
   }
 }
 
-
 .slider-nav-prev, .slider-nav-next {
 
   width: 34px;
@@ -407,8 +402,6 @@
 }
 
 .slider-nav-next {
-  /*  background-image: url('../img/svg/arrow-right.svg');*/
-
 
   &:after {
     background-image: url('../img/svg/arrow-right.svg');
@@ -420,7 +413,6 @@
 
   }
 }
-
 
 #slider-actions {
 

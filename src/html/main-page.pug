@@ -2,6 +2,7 @@ include ../components/head/head
 include ../components/header/index
 include ../components/content/information-block/index
 include ../components/content/link/index
+include ../components/content/greeting-popup/index
 include ../components/footer/index
 
 mixin title(data)
@@ -94,7 +95,8 @@ html(lang="ru")
                     class: 'with-video',
                     'data-text': 'Смотреть видео о возможностях портала'
                 }) Смотреть видео о возможностях портала
-
         +footer()
+        +greeting-popup()
+        script(src="js/components/content/greeting-popup/index.js" defer)
         script(src="js/components/header/index.js" defer)
         script(src="js/components/main-page/index.js" defer)
