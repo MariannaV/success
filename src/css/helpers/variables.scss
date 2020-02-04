@@ -49,6 +49,7 @@ $colorBlue: hsl(211, 98%, 35%);
 $colorBlueDark: hsl(210, 100%, 24%);
 $colorBlueDarkOpacity: hsl(210, 100%, 24%, 0.05);
 $colorOrange: hsl(25, 93%, 48%);
+$colorOrangeOpacity: hsla(25, 93%, 48%, 0.5);
 $colorGray: hsl(0, 0%, 62%);
 $colorDark: rgb(54, 67, 100);
 $colorBlue2: hsl(223, 30%, 30%);
@@ -72,6 +73,7 @@ $colorBlackOpacity: hsla(0, 0%, 0%, 0.16);
 
 $colorBlueBoxShadow: hsla(210, 100%, 24%, 0.05);
 $colorBlueBoxShadow2: hsla(210, 100%, 24%, 0.2);
+
 
 /* ----------- РАЗРЕШЕНИЯ ЭКРАНА ----------- */
 $mobile: 320px;

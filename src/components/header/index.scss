@@ -156,6 +156,7 @@ body > header {
   width: 100%;
   border: 1px solid $colorLightGray;
   border-radius: 4px;
+  transition: border-color 0.2s;
   @media(--max-desktop) {
     padding: 16px 40px 16px 16px;
     background-color: $colorBlueLight;
@@ -172,7 +173,9 @@ body > header {
   @media(--min-big-desktop) {
     width: 35.9vw;
   }
-
+&:focus, &:hover{
+  border-color: $colorBlue;
+}
   &:not(:matches(:valid, :focus)) ~ .search-wrapper {
     display: none;
   }
@@ -212,7 +215,32 @@ body > header {
     }
   }
 
-  & > .header-cart {
+  .header-cart {
+    display: flex;
+    @media(--max-desktop) {
+      order: 3;
+    }
+    @media(--min-desktop) {
+      background-size: 24px;
+      display: flex;
+      align-items: center;
+    }
+    &.is-empty {
+      pointer-events: none;
+      .header-cart-count {
+        @media(--max-desktop) {
+          margin-right: 0;
+        }
+        background-image: url("../img/svg/gray-cart-icon.svg");
+        .header-cart-count-number{
+          display: none;
+        }
+      }
+      .header-cart-sum {
+        display: none;
+      }
+    }
+  .header-cart-count {
     background-image: url("../img/svg/blue-cart-icon.svg");
     min-width: 24px;
     min-height: 24px;
@@ -221,18 +249,12 @@ body > header {
     position: relative;
     cursor: pointer;
     margin-right: 13px;
-    @media(--max-desktop) {
-      order: 3;
-
-
+    &:hover{
+      .header-cart-count-number{
+          box-shadow: 0 6px 6px hsla(25, 93%, 48%, 0.5);
+      }
     }
-    @media(--min-desktop) {
-      background-size: 24px;
-      display: flex;
-      align-items: center;
-    }
-
-    .header-cart-count {
+    .header-cart-count-number {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -245,6 +267,10 @@ body > header {
       min-height: 18px;
       position: absolute;
       padding: 2px;
+      transition: box-shadow 0.2s;
+
+
+
       @media(--max-desktop) {
         top: -2px;
         right: -14px;
@@ -256,13 +282,15 @@ body > header {
 
     }
 
+
+  }
     .header-cart-sum {
       font-weight: $FontDemi;
       @media(--max-desktop) {
         font-size: 0;
       }
       @media(--min-desktop) {
-        margin-left: 51px;
+        margin-left: 13px;
         display: flex;
         align-items: center;
       }
@@ -280,8 +308,7 @@ body > header {
         }
       }
     }
-  }
-
+}
   .about-user-block {
     @media(--max-desktop) {
       margin-left: auto;

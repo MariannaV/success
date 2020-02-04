@@ -20,7 +20,9 @@ body {
     /*min-height: 100vh;*/
   }
 }
-
+input, textarea{
+  transition: border-color 0.2s;
+}
 
 .block-html {
   overflow-y: hidden !important;
@@ -194,7 +196,7 @@ details > summary::-webkit-details-marker {
 
 .exit-button {
   display: flex;
-  width: 100%;
+  width: max-content;
   background-color: $colorWhite;
   font-weight: $FontDemi;
   color: $colorBlue2;
@@ -206,9 +208,19 @@ details > summary::-webkit-details-marker {
     content: "";
     display: block;
     background-image: url("../img/svg/exit-icon.svg");
+    background-repeat: no-repeat;
     width: 24px;
     height: 24px;
     margin-right: 6px;
+    background-position: center;
+
+  }
+  &:hover{
+    &::before{
+
+        background-image: url("../img/svg/dark-gray-exit-icon.svg");
+
+    }
   }
 
   @media(min-width: 549px) and (max-width: 1023px) {

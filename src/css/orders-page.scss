@@ -30,7 +30,7 @@
 
     tr {
       td {
-        width: 17%;
+        width: 18%;
         padding-top: 28px;
         padding-bottom: 28px;
       }
@@ -191,6 +191,10 @@
 
     select {
       width: 177px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: $FontRegular;
+      box-sizing: border-box;
+
     }
 
   }
@@ -233,7 +237,14 @@
     background-color: transparent;
     border: none;
     background-image: url("../img/svg/close-icon-light-gray.svg");
-
+    background-repeat: no-repeat;
+&:hover{
+  background-color: $colorOrange;
+  border-radius: 50%;
+  background-position: center;
+  background-image: url("../img/svg/close-icon-white.svg");
+  transition: background-color 0.2s;
+}
     @media(--max-tablet) {
       margin-bottom: 13px;
     }

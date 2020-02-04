@@ -1,0 +1,7 @@
+<svg id="ic_shopping-cart_24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_2602" data-name="Rectangle 2602" width="24" height="24" fill="none"/>
+  <g id="Group_2524" data-name="Group 2524" transform="translate(0 4)">
+    <path id="Union_9" data-name="Union 9" d="M17,18a2,2,0,1,1,2,2A2,2,0,0,1,17,18ZM4,18a2,2,0,1,1,2,2A2,2,0,0,1,4,18Zm3-4a1,1,0,0,1-.969-.757L3.219,2H1A1,1,0,1,1,1,0H4a1,1,0,0,1,.97.757L7.781,12h10.6l3-6H10a1,1,0,1,1,0-2H23a1,1,0,0,1,.895,1.447l-4,8A1,1,0,0,1,19,14Z" transform="translate(0 0)" fill="rgba(54,67,100,0.5)"/>
+    <path id="Path_2461" data-name="Path 2461" d="M794,420" transform="translate(-772 -415)" fill="rgba(54,67,100,0.5)" stroke="gray" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>
