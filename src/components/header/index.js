@@ -42,10 +42,12 @@ const getScreenName = (screenWidth) => screenWidth >= 1024 ? 'desktop' : 'mobile
 let lastScreen = getScreenName(window.innerWidth);
 window.addEventListener("resize", function () {
     const currentScreen = getScreenName(window.innerWidth);
-    if (lastScreen !==  currentScreen) {
-        lastScreen = currentScreen;
-        location.reload();
+    setTimeout(()=>{
+        if (lastScreen !==  currentScreen) {
+            lastScreen = currentScreen;
+            location.reload();
     }
+    }, 100);
 }, false);
 
 
