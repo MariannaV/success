@@ -36,9 +36,8 @@
   }
 }
 
-
 .m-input__wrapper > .placeholder {
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-weight: $FontDemi;
   font-size: $size-14;
   line-height: 19px;
@@ -50,10 +49,7 @@
   pointer-events: none;
   transition: transform 0.3s;
   top: 51%;
-
-
 }
-
 
 /*REQUIRED FOR '*'   */
 
@@ -79,7 +75,7 @@
     position: absolute;
     right: 16px;
     top: 16px;
-    background-image: url("../img/svg/show-password.svg");
+    background-image: url('../img/svg/show-password.svg');
     background-color: initial;
     border: none;
     background-size: contain;
@@ -91,7 +87,7 @@
     }
 
     &.is-shown {
-      background-image: url("../img/svg/hide-password.svg");
+      background-image: url('../img/svg/hide-password.svg');
     }
   }
 }

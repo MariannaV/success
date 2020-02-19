@@ -8,11 +8,11 @@
 
 .act-page {
   & > main {
-    @media(--max-tablet) {
+    @media (--max-tablet) {
       padding: $margin-1;
     }
 
-    @media(min-width: 375px) {
+    @media (min-width: 375px) {
       .m-accordion__container {
         & + .date__container {
           margin-bottom: 36px;
@@ -21,8 +21,7 @@
     }
 
     .date__container {
-      @media(max-width: 374px) {
-
+      @media (max-width: 374px) {
         & + button {
           margin-top: 20px;
         }
@@ -33,9 +32,7 @@
   & .orange-button {
     width: 156px;
   }
-
 }
-
 
 .get-act__form > .m-accordion__container {
   &.is-hidden .filters__container {
@@ -47,22 +44,21 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: $FontBold;
       margin-bottom: 24px;
-      background-image: url("../img/svg/arrow-down.svg");
+      background-image: url('../img/svg/arrow-down.svg');
       max-width: 95px;
       background-repeat: no-repeat;
       background-position: right center;
       cursor: pointer;
       border: none;
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         font-size: $size-18;
         line-height: 22px;
       }
-      @media(--min-tablet) {
+      @media (--min-tablet) {
         font-size: $size-22;
         line-height: 28px;
       }
     }
-
   }
 
   & > .filters__container {
@@ -78,13 +74,12 @@
     margin-top: 64px;
   }
 
-  @media(--max-mobile) {
+  @media (--max-mobile) {
     & + .date__container {
       margin-top: 36px;
     }
   }
 }
-
 
 /*----------------- FILTERS: START*/
 .m-filter__container {
@@ -102,7 +97,7 @@
     border: 1px solid $colorLightGray;
     border-radius: 20px;
     padding: 8px 17px;
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-weight: $FontDemi;
     font-size: $size-13;
     line-height: 18px;
@@ -139,10 +134,8 @@
 
 /*----------------- FILTERS: END*/
 
-
 /*----------------- FILTERS: START*/
 
 /*----------------- FILTERS: END*/
-
 
 /*----------------- DATEPICKER: END*/

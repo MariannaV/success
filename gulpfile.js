@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 const gulp = require('gulp'),
   newer = require('gulp-newer'),
   plumber = require('gulp-plumber'),
-  notify = require('gulp-notify');
+  notify = require('gulp-notify')
 
 gulp.task('pug-to-html', () =>
   gulp
@@ -11,7 +11,7 @@ gulp.task('pug-to-html', () =>
     .pipe(newer('public'))
     .pipe(require('gulp-pug')({ pretty: '\t' }))
     .pipe(gulp.dest('public'))
-);
+)
 
 gulp.task('html', () =>
   gulp
@@ -19,7 +19,7 @@ gulp.task('html', () =>
     .pipe(plumber({ errorHandler: notify.onError('HTML: <%= error.message %>') }))
     .pipe(newer('public'))
     .pipe(gulp.dest('public'))
-);
+)
 
 gulp.task('img', () =>
   gulp
@@ -34,11 +34,11 @@ gulp.task('img', () =>
       })
     )*/
     .pipe(gulp.dest('public/img/'))
-);
+)
 
 const postcss = require('gulp-postcss'),
   sourcemaps = require('gulp-sourcemaps'),
-  rename = require('gulp-rename');
+  rename = require('gulp-rename')
 
 gulp.task('css', () =>
   gulp
@@ -53,7 +53,7 @@ gulp.task('css', () =>
     .pipe(rename({ extname: '.css' }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('public/styles'))
-);
+)
 
 gulp.task('fonts', () =>
   gulp
@@ -61,13 +61,13 @@ gulp.task('fonts', () =>
     .pipe(plumber({ errorHandler: notify.onError('FONTS: <%= error.message %>') }))
     .pipe(newer('public/styles/fonts/'))
     .pipe(gulp.dest('public/styles/fonts/'))
-);
+)
 
-const compileJS = require('gulp-babel')(require('./configs/babelrc.js'));
+const compileJS = require('gulp-babel')(require('./configs/babelrc.js'))
 
 gulp.task('js', () =>
   gulp
-    .src('src/components/**/*.js'/*, {
+    .src('src/components/**/*.js' /*, {
       since: gulp.lastRun('js'),
     }*/)
     .pipe(
@@ -78,7 +78,7 @@ gulp.task('js', () =>
     // .pipe(newer('public/js/components'))
     .pipe(compileJS)
     .pipe(gulp.dest('public/js/components'))
-);
+)
 
 const libraries = {
   names: Object.keys(require(`./package.json`).dependencies),
@@ -88,7 +88,7 @@ const libraries = {
   get dist() {
     return this.names.map(libraryName => `public/libs/${libraryName}`)
   },
-};
+}
 
 gulp.task('import-libraries', () =>
   gulp
@@ -101,11 +101,11 @@ gulp.task('import-libraries', () =>
     // .pipe(newer("public/libs"))
     .pipe(
       gulp.dest(file => {
-        const libraryName = file.base.split('node_modules/')[1];
+        const libraryName = file.base.split('node_modules/')[1]
         return `public/libs/${libraryName}`
       })
     )
-);
+)
 
 gulp.task('js-optim', () =>
   gulp
@@ -117,7 +117,7 @@ gulp.task('js-optim', () =>
     )
     .pipe(require('gulp-uglify-es').default())
     .pipe(gulp.dest('public/js'))
-);
+)
 
 gulp.task('сss-optim', () =>
   gulp
@@ -129,16 +129,16 @@ gulp.task('сss-optim', () =>
     )
     .pipe(postcss([require('cssnano')]))
     .pipe(gulp.dest('public'))
-);
+)
 
 const browserSync = require('browser-sync').create()
 gulp.task('reload', done => {
-  browserSync.reload();
-  done();
-});
+  browserSync.reload()
+  done()
+})
 
 const compileAll = gulp.parallel('import-libraries', gulp.series('fonts', 'img', 'css'), 'js', 'pug-to-html', 'html'),
-  cleanBuildFolder = async () => await require('del')(['./public']);
+  cleanBuildFolder = async () => await require('del')(['./public'])
 
 gulp.task(
   'default',
@@ -148,13 +148,13 @@ gulp.task(
         baseDir: './public/',
       },
     }),
-    gulp.watch('src/css/fonts/**/*.*', gulp.series('fonts', 'reload')),
-    gulp.watch('src/img/**/*.*', gulp.series('img', 'reload')),
-    gulp.watch('src/**/*.scss', gulp.series('css', 'reload')),
-    gulp.watch('src/**/*.js', gulp.series('js', 'reload')),
-    gulp.watch('src/**/*.pug', gulp.series('pug-to-html', 'reload')),
-    gulp.watch('src/**/*.html', gulp.series('html', 'reload'))
+      gulp.watch('src/css/fonts/**/*.*', gulp.series('fonts', 'reload')),
+      gulp.watch('src/img/**/*.*', gulp.series('img', 'reload')),
+      gulp.watch('src/**/*.scss', gulp.series('css', 'reload')),
+      gulp.watch('src/**/*.js', gulp.series('js', 'reload')),
+      gulp.watch('src/**/*.pug', gulp.series('pug-to-html', 'reload')),
+      gulp.watch('src/**/*.html', gulp.series('html', 'reload'))
   })
-);
+)
 
-gulp.task('build', gulp.series(cleanBuildFolder, compileAll, gulp.parallel('js-optim', 'сss-optim')));
+gulp.task('build', gulp.series(cleanBuildFolder, compileAll, gulp.parallel('js-optim', 'сss-optim')))

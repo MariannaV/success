@@ -7,12 +7,12 @@
 @import '../components/header/index.scss';
 
 .cart-page {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: $colorBlue2;
   font-weight: $FontRegular;
 
   .page-title {
-    @media(--max-tablet) {
+    @media (--max-tablet) {
       padding: $margin-1;
     }
   }
@@ -21,13 +21,13 @@
     padding: 20px;
 
     & + .page-title {
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         margin-top: 24px;
       }
       margin-top: 40px;
     }
 
-    @media(--max-tablet) {
+    @media (--max-tablet) {
       padding: 0;
       margin: 0;
     }
@@ -36,7 +36,7 @@
   .form__wrapper {
     &.page-content__container {
       padding: 40px;
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         padding: 20px;
       }
 
@@ -46,25 +46,22 @@
     }
   }
 
-
   .m-table {
     & > thead {
-      @media(--max-tablet) {
-
+      @media (--max-tablet) {
         display: none;
       }
-
     }
 
     tbody {
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         display: block;
         width: 100%;
       }
     }
 
     tr {
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         display: flex;
         flex-wrap: wrap;
         padding: 24px;
@@ -73,30 +70,31 @@
       }
 
       .title-td {
-        @media(--max-tablet) {
+        @media (--max-tablet) {
           padding: 0;
           max-width: 85%;
         }
       }
 
       .cost-td {
-        @media(--max-tablet) {
+        @media (--max-tablet) {
           &::before {
-            content: "Ваша цена";
+            content: 'Ваша цена';
           }
         }
       }
 
       .sum {
-        @media(--max-tablet) {
+        @media (--max-tablet) {
           &::before {
-            content: "Сумма";
+            content: 'Сумма';
           }
         }
       }
 
-      .cost-td, .sum {
-        @media(--max-tablet) {
+      .cost-td,
+      .sum {
+        @media (--max-tablet) {
           display: flex;
           width: 50%;
           padding: 20px;
@@ -108,8 +106,6 @@
             display: block;
             font-weight: $FontRegular;
           }
-
-
         }
 
         & > .rub {
@@ -123,7 +119,7 @@
       }
 
       td.image-td {
-        @media(--max-tablet) {
+        @media (--max-tablet) {
           position: absolute;
           right: 16px;
           top: 10px;
@@ -133,15 +129,13 @@
     }
 
     .amount-td {
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         display: none;
       }
     }
 
     td {
-      @media(--min-tablet) {
-
-
+      @media (--min-tablet) {
         &:first-child {
           width: 26vw;
         }
@@ -171,7 +165,7 @@
         .m-input__wrapper {
           max-width: 330px;
           display: flex;
-          @media(--max-tablet) {
+          @media (--max-tablet) {
             border: 1px solid $colorLightGray;
           }
 
@@ -180,7 +174,7 @@
           }
 
           input {
-            @media(--max-tablet) {
+            @media (--max-tablet) {
               width: 106px;
               border-left: 1px solid $colorLightGray;
               border-right: 1px solid $colorLightGray;
@@ -190,7 +184,8 @@
             }
           }
 
-          button[name="minus"], button[name="plus"] {
+          button[name='minus'],
+          button[name='plus'] {
             right: 0;
 
             background-color: transparent;
@@ -200,41 +195,37 @@
             padding: 10px;
             width: 7px;
             height: 4px;
-            @media(--max-tablet) {
+            @media (--max-tablet) {
               width: calc((100% - 106px) / 2);
               height: 40px;
             }
-            @media(--min-tablet) {
+            @media (--min-tablet) {
               position: absolute;
-              background-image: url("../img/svg/arrow-top-gray.svg");
-
+              background-image: url('../img/svg/arrow-top-gray.svg');
             }
-
           }
 
-          button[name="plus"] {
+          button[name='plus'] {
             top: 0;
-            @media(--max-tablet) {
-              background-image: url("../img/svg/plus-icon.svg");
+            @media (--max-tablet) {
+              background-image: url('../img/svg/plus-icon.svg');
             }
           }
 
-          button[name="minus"] {
+          button[name='minus'] {
             bottom: 0;
             transform: rotate(180deg);
-            @media(--max-tablet) {
+            @media (--max-tablet) {
               order: -1;
-              background-image: url("../img/svg/minus-icon.svg");
+              background-image: url('../img/svg/minus-icon.svg');
             }
           }
-
         }
-
       }
     }
 
     .counter-td {
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         padding: 0;
         order: 2;
         display: block;
@@ -243,12 +234,12 @@
     }
 
     .m-counter {
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         width: 100%;
         max-width: 330px;
         margin: 0 auto;
       }
-      @media(--min-tablet) {
+      @media (--min-tablet) {
         width: 63%;
       }
 
@@ -267,16 +258,14 @@
         width: 32px;
         height: 32px;
         cursor: pointer;
-        background-image: url("../img/svg/close-icon-gray.svg");
+        background-image: url('../img/svg/close-icon-gray.svg');
         background-repeat: no-repeat;
         background-position: center;
         border-radius: 50%;
-        @media(--min-tablet) {
+        @media (--min-tablet) {
           &:hover {
-            background-image: url("../img/svg/close-icon-white.svg");
+            background-image: url('../img/svg/close-icon-white.svg');
             background-color: $colorOrange;
-
-
           }
         }
 
@@ -298,7 +287,7 @@
     display: flex;
     justify-content: space-between;
     color: $colorBlue2;
-    @media(--max-tablet) {
+    @media (--max-tablet) {
       padding: 0 $margin-1;
     }
 
@@ -311,22 +300,21 @@
     .m-filter__container {
       input {
         display: none;
-
       }
     }
   }
 
   .page-bottom {
-    @media(--max-tablet) {
+    @media (--max-tablet) {
       padding: 0 $margin-1;
     }
-    @media(--min-tablet) {
+    @media (--min-tablet) {
       display: flex;
       align-items: center;
     }
 
     & > .orange-button {
-      @media(--min-tablet) {
+      @media (--min-tablet) {
         min-width: 157px;
         width: auto;
       }
@@ -336,21 +324,20 @@
       font-size: $size-13;
       margin-left: 50px;
       max-width: 340px;
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         text-align: center;
         margin: 20px auto 0px;
       }
     }
   }
-
 }
 
 .fieldset {
   display: flex;
-  @media(--max-tablet) {
+  @media (--max-tablet) {
     flex-direction: column;
   }
-  @media(--min-tablet) {
+  @media (--min-tablet) {
     justify-content: space-between;
   }
 
@@ -369,31 +356,31 @@
   }
 
   & + .fieldset {
-    @media(--max-desktop) {
+    @media (--max-desktop) {
       margin-top: 18px;
     }
-    @media(--min-desktop) {
+    @media (--min-desktop) {
       margin-top: 24px;
     }
   }
 
   .fieldset-description {
-    @media(--min-tablet) {
+    @media (--min-tablet) {
       width: 28%;
     }
 
     & + .fieldset-content {
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         margin-top: 18px;
       }
     }
   }
 
   .fieldset-content {
-    @media(--max-tablet) {
+    @media (--max-tablet) {
       width: 100%;
     }
-    @media(--min-tablet) {
+    @media (--min-tablet) {
       width: 66%;
     }
     /* @media(min-width)*/
@@ -418,7 +405,7 @@
           /*border-color: $colorWhite;*/
           border: 3px solid $colorLightGray2;
           background-color: $colorBlue;
-          transition: background-color .3s ease-out;
+          transition: background-color 0.3s ease-out;
         }
       }
     }
@@ -429,9 +416,10 @@
       min-height: 130px;
       border: 1px solid $colorLightGray;
       border-radius: 4px;
-      &:hover, &:focus{
-      border-color: hsl(223, 30%, 30%);
-    }
+      &:hover,
+      &:focus {
+        border-color: hsl(223, 30%, 30%);
+      }
     }
 
     .m-datepicker__wrapper {
@@ -441,7 +429,8 @@
     .flatpickr-input {
       width: 100%;
       padding: 5px 15px;
-      &:hover, &:focus{
+      &:hover,
+      &:focus {
         border-color: hsl(223, 30%, 30%);
       }
     }
@@ -452,140 +441,123 @@
   }
 
   .fieldset-title {
-
     font-weight: $FontDemi;
-
   }
-
 
   .select-time__block {
     margin-top: 12px;
     display: flex;
     align-items: baseline;
     justify-content: flex-start;
-    @media(max-width: 374px) {
+    @media (max-width: 374px) {
       flex-direction: column;
     }
-    @media(--min-big-desktop) {
+    @media (--min-big-desktop) {
       justify-content: space-between;
     }
 
     .m-input__container {
       & + .m-input__container {
-        @media(min-width: 375px) and (max-width: 1359px) {
+        @media (min-width: 375px) and (max-width: 1359px) {
           margin-left: 10px;
         }
       }
-
     }
 
     input {
       width: 226px;
 
-      @media(min-width: 375px) and (max-width: 515px) {
-        width: 150px;
-
-      }
-      @media(min-width: 768px) and (max-width: 899px) {
+      @media (min-width: 375px) and (max-width: 515px) {
         width: 150px;
       }
-      @media(min-width: 1024px) and (max-width: 1261px) {
+      @media (min-width: 768px) and (max-width: 899px) {
+        width: 150px;
+      }
+      @media (min-width: 1024px) and (max-width: 1261px) {
         width: 150px;
       }
     }
   }
-
 }
 
 .choose-transport {
   align-items: baseline;
-  @media(min-width: 1024px) and (max-width: 1225px) {
+  @media (min-width: 1024px) and (max-width: 1225px) {
     flex-direction: column;
   }
 
   .fieldset-description {
-    @media(min-width: 1024px) and (max-width: 1225px) {
+    @media (min-width: 1024px) and (max-width: 1225px) {
       width: 100%;
     }
-
-
   }
 
   .fieldset-content {
     justify-content: space-between;
     display: flex;
-    @media(max-width: 549px) {
+    @media (max-width: 549px) {
       flex-direction: column;
     }
-    @media(min-width: 768px) and (max-width: 1023px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       justify-content: space-between;
     }
-    @media(min-width: 1024px) and (max-width: 1225px) {
+    @media (min-width: 1024px) and (max-width: 1225px) {
       width: 100%;
 
       margin-top: 30px;
     }
-    @media(--min-big-desktop) {
-
+    @media (--min-big-desktop) {
       justify-content: space-between;
     }
-
   }
-
-
 }
 
-
-#self-delivery, #delivery-to {
+#self-delivery,
+#delivery-to {
   display: none;
 }
-
 
 .fieldsets-container {
   font-weight: $FontRegular;
   font-size: $size-15;
   line-height: 24px;
   color: $colorBlue2;
-  @media(--max-tablet) {
+  @media (--max-tablet) {
     display: flex;
     flex-direction: column;
   }
 
-
-  &[data-delivery="self-delivery"] .fieldset.self-delivery, &[data-delivery="delivery-to"] .fieldset.delivery-to,
-  &[data-delivery="delivery-to"] ~ .delivery-to {
+  &[data-delivery='self-delivery'] .fieldset.self-delivery,
+  &[data-delivery='delivery-to'] .fieldset.delivery-to,
+  &[data-delivery='delivery-to'] ~ .delivery-to {
     display: flex;
   }
 
-  &[data-delivery="self-delivery"] {
-
-    @media(--min-desktop) {
+  &[data-delivery='self-delivery'] {
+    @media (--min-desktop) {
       padding-bottom: 16px;
     }
-
   }
 
-  &[data-delivery="delivery-to"] {
+  &[data-delivery='delivery-to'] {
     border-bottom: 1px solid $colorLightGray;
-    @media(--max-desktop) {
+    @media (--max-desktop) {
       padding-bottom: 30px;
     }
-    @media(--min-desktop) {
+    @media (--min-desktop) {
       padding-bottom: 65px;
     }
   }
 }
-
 
 .description-label {
   display: none;
   padding: 24px;
   background-color: $colorLightGray2;
   max-width: 320px;
-  @media(max-width: 549px) {
+  @media (max-width: 549px) {
     margin-top: 30px;
   }
-
 
   & > h6 {
     font-weight: $FontBold;
@@ -624,7 +596,6 @@ input.method-delivery {
     display: block;
   }
 }
-
 
 /*---CART BLOCK---*/
 .shipping-container {

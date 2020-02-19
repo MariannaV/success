@@ -3,7 +3,8 @@
   position: relative;
   $fontSize: $size-12;
 
-  &, &::after {
+  &,
+  &::after {
     font-family: 'Montserrat', sans-serif;
     font-weight: $FontDemi;
     font-size: $fontSize;
@@ -24,7 +25,7 @@
 .with-video {
   $paddingForImage: 45px;
   color: $colorWhite;
-  background-image: url("../img/svg/play-icon.svg");
+  background-image: url('../img/svg/play-icon.svg');
   background-repeat: no-repeat;
   background-position: right 5px center;
   padding-right: $paddingForImage;

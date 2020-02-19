@@ -6,22 +6,21 @@
 @import '../components/header/index.scss';
 
 .price-page {
-
-
-  @media(max-width: 599px) {
-    .white-button, .orange-button {
+  @media (max-width: 599px) {
+    .white-button,
+    .orange-button {
       margin: 8px auto;
       width: 100%;
       /* max-width: 320px;*/
     }
   }
-  @media(--max-tablet) {
+  @media (--max-tablet) {
     & > main {
       padding: $margin-1;
     }
   }
 
-  @media(--min-tablet) {
+  @media (--min-tablet) {
     .orange-button {
       margin-right: auto;
     }
@@ -30,10 +29,10 @@
         margin-left: 24px;
       }
     }
-
   }
 
-  .white-button, .orange-button {
+  .white-button,
+  .orange-button {
     width: auto;
     padding: 20px 24px;
   }
@@ -50,11 +49,11 @@
       background-repeat: no-repeat;
       background-position: right center;
 
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         font-size: $size-18;
         line-height: 22px;
       }
-      @media(--min-tablet) {
+      @media (--min-tablet) {
         font-size: $size-22;
         line-height: 28px;
       }
@@ -68,11 +67,11 @@
       background-position: right center;
       border-bottom: 2px solid $colorBlue;
       padding-bottom: 10px;
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         font-size: $size-14;
         line-height: 18px;
       }
-      @media(--min-tablet) {
+      @media (--min-tablet) {
         font-size: $size-16;
         line-height: 20px;
       }
@@ -92,14 +91,12 @@
 
 /*START BUTTONS CONTAINER*/
 .page-content__container-buttons {
-
   display: flex;
   justify-content: flex-end;
-  @media(max-width: 599px) {
+  @media (max-width: 599px) {
     flex-direction: column;
-
   }
-  @media(--max-tablet) {
+  @media (--max-tablet) {
     justify-content: space-between;
   }
 }

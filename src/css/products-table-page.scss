@@ -7,17 +7,14 @@
 @import '../components/header/index.scss';
 
 .products-table-page {
-
-
   .page-title {
-    @media(--max-tablet) {
+    @media (--max-tablet) {
       padding: 24px 24px 12px 24px;
     }
-
   }
 
   .page-content__container {
-    @media(--max-tablet) {
+    @media (--max-tablet) {
       padding-top: 26px;
     }
   }
@@ -37,9 +34,7 @@
     }
   }
   .m-table {
-
-
-    @media(--max-tablet) {
+    @media (--max-tablet) {
       padding-top: 0;
       padding-right: 0;
       display: block;
@@ -49,7 +44,7 @@
     }
 
     & > thead {
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         th:last-child {
           position: sticky;
           right: 0;
@@ -61,59 +56,56 @@
           grid-area: 1 / 6;
         }
       }
-
     }
 
     tbody {
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         display: block;
         width: 100%;
       }
     }
 
     tr {
-      @media(--max-tablet) {
+      @media (--max-tablet) {
         display: grid;
         grid-template-columns: 320px 100px 100px 120px 90px;
         grid-gap: 10px;
         width: max-content;
       }
       td {
-
         &:first-child {
-          @media(--min-tablet) {
+          @media (--min-tablet) {
             width: 26vw;
           }
         }
 
         &:nth-child(2) {
-          @media(--min-tablet) {
+          @media (--min-tablet) {
             width: 8.6vw;
           }
         }
 
-        @media(--min-tablet) {
+        @media (--min-tablet) {
           &:nth-child(3) {
             width: 8vw;
           }
         }
 
         &:nth-child(4) {
-          @media(--min-tablet) {
+          @media (--min-tablet) {
             width: 8vw;
           }
         }
 
         &:nth-child(5) {
-          @media(--min-tablet) {
+          @media (--min-tablet) {
             width: 7vw;
           }
         }
 
         &:last-child {
-          @media(--min-tablet) {
+          @media (--min-tablet) {
             width: 4vw;
-
           }
         }
 
@@ -121,10 +113,11 @@
           .m-input__wrapper {
             display: flex;
 
-            button[name="minus"], button[name="plus"] {
+            button[name='minus'],
+            button[name='plus'] {
               position: absolute;
               right: 0;
-              background-image: url("../img/svg/arrow-top-gray.svg");
+              background-image: url('../img/svg/arrow-top-gray.svg');
               background-color: transparent;
               border: none;
               background-repeat: no-repeat;
@@ -132,20 +125,17 @@
               padding: 10px;
               width: 7px;
               height: 4px;
-
             }
 
-            button[name="plus"] {
+            button[name='plus'] {
               top: 0;
             }
 
-            button[name="minus"] {
+            button[name='minus'] {
               bottom: 0;
               transform: rotate(180deg);
             }
-
           }
-
         }
       }
 
@@ -163,7 +153,7 @@
       }
 
       .image-td {
-        @media(--max-tablet) {
+        @media (--max-tablet) {
           display: flex;
           align-items: center;
           position: sticky;
@@ -176,24 +166,22 @@
         }
 
         & > div {
-
           height: 40px;
           cursor: pointer;
-          background-image: url("../img/svg/orange-cart-icon.svg");
+          background-image: url('../img/svg/orange-cart-icon.svg');
           background-repeat: no-repeat;
           background-position: center;
           background-color: $colorWhite;
           border: 1px solid $colorOrange;
           border-radius: 4px;
-          @media(--max-tablet) {
+          @media (--max-tablet) {
             width: 40px;
           }
-          @media(--min-tablet) {
+          @media (--min-tablet) {
             width: 56px;
             &:hover {
-              background-image: url("../img/svg/white-cart-icon.svg");
+              background-image: url('../img/svg/white-cart-icon.svg');
               background-color: $colorOrange;
-
             }
           }
 
@@ -206,7 +194,6 @@
       & + .table-footer {
         margin-top: 26px;
       }
-
     }
 
     .rub {
@@ -215,8 +202,4 @@
       height: 11px;
     }
   }
-
-
-
 }
-

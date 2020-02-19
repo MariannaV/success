@@ -44,7 +44,7 @@ $colorGold: hsl(42, 100%, 74%);
 /*------ $colorBlue: hsl(204, 61%, 65%);
 $colorBlueLight: color($colorBlue lightness(50%)); ----*/
 $colorPurple: hsl(316, 50%, 63%);
-$colorRed:  hsl(346, 70%, 49%);
+$colorRed: hsl(346, 70%, 49%);
 $colorBlue: hsl(211, 98%, 35%);
 $colorBlueDark: hsl(210, 100%, 24%);
 $colorBlueDarkOpacity: hsl(210, 100%, 24%, 0.05);
@@ -70,10 +70,8 @@ $colorWhiteOpacity3: hsla(0, 0%, 100%, 0.3);
 $colorGrayOpacity: hsl(0, 0%, 62%, 0.2);
 $colorBlackOpacity: hsla(0, 0%, 0%, 0.16);
 
-
 $colorBlueBoxShadow: hsla(210, 100%, 24%, 0.05);
 $colorBlueBoxShadow2: hsla(210, 100%, 24%, 0.2);
-
 
 /* ----------- РАЗРЕШЕНИЯ ЭКРАНА ----------- */
 $mobile: 320px;
@@ -81,7 +79,6 @@ $mobile-2: 485px;
 $tablet: 768px;
 $desktop: 1024px;
 $big-desktop: 1360px;
-
 
 @custom-media --max-mobile (width < $mobile-2);
 @custom-media --min-mobile (width >= $mobile-2);
