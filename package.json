@@ -37,7 +37,7 @@
     "extends": "./configs/babelrc.js"
   },
   "dependencies": {
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "jquery-ui-slider": "1.12.1",
     "echo-js": "1.7.3",
     "lightgallery": "1.6.12",
